@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--bg: #edeae5;
+	--secondary: #714955;
+	--tertiary: #5c80bc;
+	--text: #2a2524;
+	--text-muted: #8a7f7c;
+	--border: rgba(113, 73, 85, 0.18);
+
+	--heading-font: 'Cormorant Garamond', Georgia, serif;
+	--body-font: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+	--nav-h: 80px;
+	--section-v: 110px;
+	--container: 1300px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body-font);
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.75;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--heading-font);
+	font-weight: 400;
+	line-height: 1.15;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img,
+video {
+	max-width: 100%;
+	display: block;
+}
+
+/* ---- Utility ---- */
+.container {
+	max-width: var(--container);
+	margin: 0 auto;
+	padding-inline: 64px;
+}
+
+.section-tag {
+	font-family: var(--body-font);
+	font-size: 0.68rem;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--secondary);
+	margin-bottom: 18px;
+}
+
+/* ---- Buttons ---- */
+.btn {
+	display: inline-block;
+	padding: 13px 34px;
+	font-family: var(--body-font);
+	font-size: 0.78rem;
+	font-weight: 400;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.28s ease;
+	border: none;
+}
+
+.btn-primary {
+	background: var(--secondary);
+	color: #fff;
+}
+.btn-primary:hover {
+	background: #5e3b45;
+}
+
+.btn-outline {
+	background: transparent;
+	color: var(--secondary);
+	border: 1px solid var(--secondary);
+}
+.btn-outline:hover {
+	background: var(--secondary);
+	color: #fff;
+}
+
+@media (max-width: 900px) {
+	:root {
+		--section-v: 64px;
+	}
+	.container {
+		padding-inline: 24px;
+	}
+}
