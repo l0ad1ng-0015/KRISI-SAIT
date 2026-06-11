@@ -6,8 +6,8 @@
 			Кристина<br /><em>Дойчинова</em>
 		</h1>
 		<p class="hero__desc">
-			Терапевтично пространство, изградено върху доверие, присъствие и грижа — за теб, такъв
-			какъвто си.
+			Терапевтично пространство, изградено върху доверие, присъствие и грижа — за теб, такъв какъвто
+			си.
 		</p>
 		<div class="hero__actions">
 			<a href="/kontakti" class="btn btn-primary">Запиши сесия</a>
@@ -22,8 +22,9 @@
 	<div class="quote-section__inner container">
 		<span class="quote-section__mark">"</span>
 		<p class="quote-section__text">
-			Не трябва да си счупен, за да потърсиш помощ. Понякога просто трябва да разговаряш с
-			някой, който наистина слуша.
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+			labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+			laboris nisi ut aliquip ex ea commodo consequat.
 		</p>
 	</div>
 </section>
@@ -34,21 +35,27 @@
 		<p class="section-tag">01 — Лични сесии</p>
 		<h2>Индивидуална<br /><em>психотерапия</em></h2>
 		<p class="split__body">
-			Индивидуалната сесия е пространство само за теб. Място, където можеш да говориш открито,
-			да изследваш преживяванията си и да намериш нови пътища напред — в темпото, което е
-			удобно за теб.
+			Индивидуалната сесия е пространство само за теб. Място, където можеш да говориш открито, да
+			изследваш преживяванията си и да намериш нови пътища напред — в темпото, което е удобно за
+			теб.
 		</p>
 		<a href="/lichni-sesii" class="btn btn-outline">Научи повече</a>
 	</div>
 	<div class="split__image" aria-hidden="true">
-		<div class="img-ph" style="background: linear-gradient(150deg, #d4bfc3 0%, #b8989f 50%, #9e7a84 100%);"></div>
+		<div
+			class="img-ph"
+			style="background: linear-gradient(150deg, #d4bfc3 0%, #b8989f 50%, #9e7a84 100%);"
+		></div>
 	</div>
 </section>
 
 <!-- ОБУЧЕНИЯ -->
 <section class="split split--alt" id="obucheniya">
 	<div class="split__image" aria-hidden="true">
-		<div class="img-ph" style="background: linear-gradient(150deg, #cec8c0 0%, #b0a89e 50%, #958d83 100%);"></div>
+		<div
+			class="img-ph"
+			style="background: linear-gradient(150deg, #cec8c0 0%, #b0a89e 50%, #958d83 100%);"
+		></div>
 	</div>
 	<div class="split__text split__text--right">
 		<p class="section-tag">02 — Обучения</p>
@@ -67,29 +74,35 @@
 		<p class="section-tag">03 — Събития</p>
 		<h2>Групови срещи<br /><em>и уъркшопи</em></h2>
 		<p class="split__body">
-			Групови срещи, открити лекции и уъркшопи — присъедини се към общност от хора, вървящи по
-			пътя на себепознанието и личностното израстване.
+			Групови срещи, открити лекции и уъркшопи — присъедини се към общност от хора, вървящи по пътя
+			на себепознанието и личностното израстване.
 		</p>
 		<a href="/sabitiya" class="btn btn-outline">Виж събитията</a>
 	</div>
 	<div class="split__image" aria-hidden="true">
-		<div class="img-ph" style="background: linear-gradient(150deg, #bcc8d8 0%, #9aabbc 50%, #7d90a8 100%);"></div>
+		<div
+			class="img-ph"
+			style="background: linear-gradient(150deg, #bcc8d8 0%, #9aabbc 50%, #7d90a8 100%);"
+		></div>
 	</div>
 </section>
 
 <!-- ЗА КРИСТИНА -->
 <section class="about" id="za-kristina">
 	<div class="about__image" aria-hidden="true">
-		<div class="img-ph" style="background: linear-gradient(150deg, #d0c0c4 0%, #b89098 50%, #a07880 100%);"></div>
+		<div
+			class="img-ph"
+			style="background: linear-gradient(150deg, #d0c0c4 0%, #b89098 50%, #a07880 100%);"
+		></div>
 	</div>
 	<div class="about__text">
 		<p class="section-tag">За Кристина</p>
 		<h2>Кристина<br /><em>Дойчинова</em></h2>
 		<p class="about__body">
-			Кристина Дойчинова е лицензиран психотерапевт с дългогодишна практика в индивидуална
-			терапия, обучения и групова работа. Нейният подход е топъл, внимателен и ориентиран към
-			реалните нужди на всеки човек — независимо дали търсиш подкрепа в труден момент или искаш
-			да разбереш себе си по-добре.
+			Кристина Дойчинова е лицензиран психотерапевт с дългогодишна практика в индивидуална терапия,
+			обучения и групова работа. Нейният подход е топъл, внимателен и ориентиран към реалните нужди
+			на всеки човек — независимо дали търсиш подкрепа в труден момент или искаш да разбереш себе си
+			по-добре.
 		</p>
 		<a href="/za-kristina" class="btn btn-outline">Прочети повече</a>
 	</div>
