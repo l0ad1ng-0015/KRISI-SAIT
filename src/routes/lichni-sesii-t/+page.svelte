@@ -48,7 +48,7 @@
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-	<div class="page-hero__inner container">
+	<div class="page-hero__text">
 		<nav class="breadcrumb">
 			<a href="/">Начало</a>
 			<span>·</span>
@@ -59,6 +59,20 @@
 			Индивидуална работа, персонализирана към твоите нужди — присъствено, онлайн или с
 			интегративен подход.
 		</p>
+		<div class="page-hero__meta">
+			<span>03 формата</span>
+			<span class="page-hero__dot"></span>
+			<span>50–80 мин</span>
+			<span class="page-hero__dot"></span>
+			<span>Поверително</span>
+		</div>
+	</div>
+	<div class="page-hero__visual" aria-hidden="true">
+		<div class="page-hero__img"></div>
+		<div class="page-hero__quote">
+			<span class="page-hero__quote-mark">"</span>
+			<p>Пространство, в което можеш да бъдеш себе си.</p>
+		</div>
 	</div>
 </section>
 
@@ -136,12 +150,21 @@
 
 	/* PAGE HERO */
 	.page-hero {
-		padding: 72px 0 88px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: stretch;
 		border-bottom: 1px solid var(--border);
+		min-height: 62vh;
 	}
 
-	.page-hero__inner {
-		max-width: 900px;
+	.page-hero__text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: calc(var(--nav-h) + 40px) 72px 72px 80px;
+		max-width: 680px;
+		justify-self: end;
+		width: 100%;
 	}
 
 	.breadcrumb {
@@ -177,7 +200,68 @@
 		font-size: 1rem;
 		color: var(--text-muted);
 		line-height: 1.85;
-		max-width: 520px;
+		max-width: 480px;
+		margin-bottom: 36px;
+	}
+
+	.page-hero__meta {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		font-size: 0.72rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--secondary);
+	}
+
+	.page-hero__dot {
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background: var(--secondary);
+		opacity: 0.45;
+	}
+
+	/* Hero visual (right side) */
+	.page-hero__visual {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.page-hero__img {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(160deg, #d8c8cb 0%, #c4a8b0 35%, #a88894 65%, #8e6a76 100%);
+	}
+
+	.page-hero__quote {
+		position: absolute;
+		left: 48px;
+		bottom: 48px;
+		right: 48px;
+		max-width: 360px;
+		background: rgba(237, 234, 229, 0.92);
+		backdrop-filter: blur(2px);
+		padding: 28px 32px 30px;
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.page-hero__quote-mark {
+		font-family: var(--heading-font);
+		font-size: 3rem;
+		line-height: 0.6;
+		color: var(--secondary);
+		opacity: 0.4;
+	}
+
+	.page-hero__quote p {
+		font-family: var(--heading-font);
+		font-size: 1.25rem;
+		font-style: italic;
+		line-height: 1.4;
+		color: var(--text);
 	}
 
 	/* VISUAL ACCORDION */
@@ -382,6 +466,38 @@
 		color: var(--text-muted);
 		max-width: 400px;
 		line-height: 1.8;
+	}
+
+	/* HERO RESPONSIVE */
+	@media (max-width: 900px) {
+		.page-hero {
+			grid-template-columns: 1fr;
+			min-height: 0;
+		}
+
+		.page-hero__text {
+			padding: calc(var(--nav-h) + 32px) 24px 48px;
+			max-width: 100%;
+			justify-self: stretch;
+			order: 1;
+		}
+
+		.page-hero__visual {
+			order: 0;
+			min-height: 56vw;
+			height: 56vw;
+		}
+
+		.page-hero__quote {
+			left: 24px;
+			right: 24px;
+			bottom: 24px;
+			padding: 20px 24px 22px;
+		}
+
+		.page-hero__quote p {
+			font-size: 1.1rem;
+		}
 	}
 
 	/* MOBILE */
