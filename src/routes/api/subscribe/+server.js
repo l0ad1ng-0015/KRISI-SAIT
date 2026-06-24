@@ -1,5 +1,5 @@
 import { json } from '@sveltejs/kit';
-import { MAILERLITE_API_KEY } from '$env/static/private';
+import { MAILERLITE_API_KEY } from '$env/dynamic/private';
 
 export async function POST({ request }) {
 	const { email } = await request.json();
