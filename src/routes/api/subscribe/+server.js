@@ -1,5 +1,4 @@
 import { json } from '@sveltejs/kit';
-import { MAILERLITE_API_KEY } from '$env/dynamic/private';
 
 export async function POST({ request }) {
 	const { email } = await request.json();
@@ -8,10 +7,12 @@ export async function POST({ request }) {
 		return json({ error: 'Невалиден имейл адрес.' }, { status: 400 });
 	}
 
+	const apiKey = process.env.MAILERLITE_API_KEY;
+
 	const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
 		method: 'POST',
 		headers: {
-			Authorization: `Bearer ${MAILERLITE_API_KEY}`,
+			Authorization: `Bearer ${apiKey}`,
 			'Content-Type': 'application/json',
 			Accept: 'application/json'
 		},
