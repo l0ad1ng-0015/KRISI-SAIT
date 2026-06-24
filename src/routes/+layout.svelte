@@ -9,6 +9,38 @@
 	let scrolled = $state(false);
 	let mobileOpen = $state(false);
 
+	let subEmail = $state('');
+	let subStatus = $state(''); // '' | 'loading' | 'success' | 'error'
+	let subError = $state('');
+
+	const subscribe = async (e) => {
+		e.preventDefault();
+		if (!subEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(subEmail)) {
+			subStatus = 'error';
+			subError = 'Въведи валиден имейл.';
+			return;
+		}
+		subStatus = 'loading';
+		try {
+			const res = await fetch('/api/subscribe', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email: subEmail })
+			});
+			const data = await res.json();
+			if (data.success) {
+				subStatus = 'success';
+				subEmail = '';
+			} else {
+				subStatus = 'error';
+				subError = data.error || 'Грешка. Опитай отново.';
+			}
+		} catch {
+			subStatus = 'error';
+			subError = 'Грешка. Опитай отново.';
+		}
+	};
+
 	const links = [
 		{ href: '/', label: 'Начало' },
 		{ href: '/lichni-sesii', label: 'Лични сесии' },
@@ -83,10 +115,26 @@
 			<div class="footer__newsletter">
 				<p class="section-tag" style="color: rgba(237,234,229,0.5);">Бюлетин</p>
 				<p class="footer__newsletter-text">Абонирай се за новини, статии и предстоящи събития.</p>
-				<form class="footer__form" onsubmit={(e) => e.preventDefault()}>
-					<input type="email" placeholder="твоят@имейл.com" class="footer__input" />
-					<button type="submit" class="btn btn-primary">Абонирай се</button>
-				</form>
+				{#if subStatus === 'success'}
+					<p class="footer__sub-ok">Благодаря! Провери имейла си за потвърждение.</p>
+				{:else}
+					<form class="footer__form" onsubmit={subscribe}>
+						<input
+							type="email"
+							placeholder="твоят@имейл.com"
+							class="footer__input"
+							bind:value={subEmail}
+							oninput={() => (subStatus = '')}
+							disabled={subStatus === 'loading'}
+						/>
+						<button type="submit" class="btn btn-primary" disabled={subStatus === 'loading'}>
+							{subStatus === 'loading' ? '...' : 'Абонирай се'}
+						</button>
+					</form>
+					{#if subStatus === 'error'}
+						<p class="footer__sub-err">{subError}</p>
+					{/if}
+				{/if}
 			</div>
 		</div>
 
@@ -265,6 +313,19 @@
 		margin-bottom: 20px;
 		margin-top: 8px;
 		line-height: 1.7;
+	}
+
+	.footer__sub-ok {
+		font-size: 0.85rem;
+		color: rgba(237, 234, 229, 0.75);
+		line-height: 1.6;
+		padding: 14px 0;
+	}
+
+	.footer__sub-err {
+		font-size: 0.78rem;
+		color: #e8a09a;
+		margin-top: 8px;
 	}
 
 	.footer__form {
