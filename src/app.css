@@ -45,6 +45,12 @@ h4 {
 	line-height: 1.15;
 }
 
+h1 em,
+h2 em,
+h3 em {
+	font-style: normal !important;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;

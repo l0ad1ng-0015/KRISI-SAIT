@@ -1,12 +1,33 @@
 {
-  "version": "0.0.1",
-  "configurations": [
-    {
-      "name": "krisi-sait",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["run", "dev"],
-      "port": 5173,
-      "autoPort": true
-    }
-  ]
+	"version": "0.0.1",
+	"configurations": [
+		{
+			"name": "krisi-sait",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "dev"],
+			"port": 5173,
+			"autoPort": true
+		},
+		{
+			"name": "nikola-petkov",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "dev"],
+			"port": 5174,
+			"cwd": "../NIKOLA PETKOV"
+		},
+		{
+			"name": "martin-goranov",
+			"runtimeExecutable": "npm",
+			"runtimeArgs": ["run", "dev"],
+			"port": 5175,
+			"cwd": "../MARTIN GORANOV"
+		},
+		{
+			"name": "bona-fortuna",
+			"runtimeExecutable": "C:\\PROGRA~1\\nodejs\\npm.cmd",
+			"runtimeArgs": ["run", "--prefix", "../BONA FORTUNA SAIT", "dev"],
+			"port": 5180,
+			"autoPort": true
+		}
+	]
 }

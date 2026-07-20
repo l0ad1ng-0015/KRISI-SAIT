@@ -112,11 +112,6 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
 	<div class="page-hero__inner container">
-		<nav class="breadcrumb">
-			<a href="/">Начало</a>
-			<span>·</span>
-			<span>Контакти</span>
-		</nav>
 		<h1>Свържи се<br /><em>с мен</em></h1>
 		<p class="page-hero__desc">
 			Имаш въпрос или искаш да запишеш сесия? Пиши ми — отговарям лично на всяко съобщение.
@@ -277,23 +272,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-	}
-
-	.breadcrumb {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-size: 0.78rem;
-		color: var(--text-muted);
-		letter-spacing: 0.05em;
-		margin-bottom: 36px;
-	}
-	.breadcrumb a {
-		color: var(--text-muted);
-		transition: color 0.2s;
-	}
-	.breadcrumb a:hover {
-		color: var(--secondary);
 	}
 
 	.page-hero h1 {

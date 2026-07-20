@@ -21,16 +21,16 @@
 			title: 'Онлайн сесия',
 			format: 'Видеовръзка · 50 мин',
 			teaser: 'Пълноценна терапевтична работа от удобството на твоя дом.',
-			desc: 'Онлайн сесията предоставя пълноценно терапевтично присъствие от удобството на твоя дом или всяко друго място, където се чувстваш комфортно. Технологията не е пречка за дълбока и смислена работа — стига да има доверие и готовност.',
+			desc: 'Онлайн сесията предоставя пълноценно терапевтично присъствие от удобността на твоя дом или всяко друго място, където се чувстваш комфортно. Технологията не е пречка за дълбока и смислена работа — стига да има доверие и готовност.',
 			points: ['От всяко място', 'Защитена връзка', 'Същото качество'],
 			gradient: 'linear-gradient(150deg, #cec8c0 0%, #b0a89e 50%, #958d83 100%)'
 		},
 		{
-			title: 'Интегративна сесия',
-			format: 'Комбиниран подход · 80 мин',
-			teaser: 'Съчетание от различни методи, адаптирани към твоите нужди.',
-			desc: 'Интегративният подход съчетава различни терапевтични методи — когнитивно-поведенчески, хуманистични, телесноориентирани — за да отговори на твоите специфични нужди. Не се придържаме към един метод, а намираме онова, което работи именно за теб.',
-			points: ['Множество методи', 'Дълбочинна работа', 'Персонализиран'],
+			title: 'Медитативна сесия',
+			format: 'Осъзнатост · 50 мин',
+			teaser: 'Практики за осъзнатост и вътрешно равновесие, съчетани с терапевтичен разговор.',
+			desc: 'Медитативната сесия съчетава осъзнати практики — дихателни техники, телесно сканиране и насочена медитация — с терапевтичен разговор. Подходяща за хора, търсещи вътрешен покой, работа с тревожност или желаещи да задълбочат връзката си с тялото и настоящия момент.',
+			points: ['Осъзнатост', 'Работа с тялото', 'Вътрешен покой'],
 			gradient: 'linear-gradient(150deg, #bcc8d8 0%, #9aabbc 50%, #7d90a8 100%)'
 		}
 	];
@@ -40,38 +40,18 @@
 	<title>Лични сесии — Кристина Дойчинова</title>
 </svelte:head>
 
-<!-- CLIENT DEMO LABEL -->
-<div class="demo-label" style="background: var(--tertiary);">
-	⬡ Версия А — Визуален акордеон &nbsp;|&nbsp;
-	<a href="/lichni-sesii-alt" style="color:#fff; text-decoration:underline;">Виж Версия Б →</a>
-</div>
-
 <!-- PAGE HERO -->
 <section class="page-hero">
-	<div class="page-hero__text">
-		<nav class="breadcrumb">
-			<a href="/">Начало</a>
-			<span>·</span>
-			<span>Лични сесии</span>
-		</nav>
+	<div class="page-hero__inner container">
 		<h1>Лични<br /><em>сесии</em></h1>
-		<p class="page-hero__desc">
-			Индивидуална работа, персонализирана към твоите нужди — присъствено, онлайн или с
-			интегративен подход.
-		</p>
+		<div class="page-hero__divider" aria-hidden="true"></div>
+		<p class="page-hero__quote">"Пространство, в което можеш да бъдеш себе си."</p>
 		<div class="page-hero__meta">
 			<span>03 формата</span>
 			<span class="page-hero__dot"></span>
-			<span>50–80 мин</span>
+			<span>50 мин</span>
 			<span class="page-hero__dot"></span>
 			<span>Поверително</span>
-		</div>
-	</div>
-	<div class="page-hero__visual" aria-hidden="true">
-		<div class="page-hero__img"></div>
-		<div class="page-hero__quote">
-			<span class="page-hero__quote-mark">"</span>
-			<p>Пространство, в което можеш да бъдеш себе си.</p>
 		</div>
 	</div>
 </section>
@@ -81,13 +61,11 @@
 	<div class="sessions__inner container">
 		{#each sessions as session, i}
 			<article class="session" class:session--open={openIndex === i}>
-				<!-- Always-visible image -->
 				<div class="session__media">
 					<div class="session__img" style="background: {session.gradient};"></div>
 					<span class="session__num">0{i + 1}</span>
 				</div>
 
-				<!-- Text column -->
 				<div class="session__main">
 					<button class="session__head" onclick={() => toggle(i)} aria-expanded={openIndex === i}>
 						<div class="session__head-text">
@@ -116,7 +94,7 @@
 									<li>{point}</li>
 								{/each}
 							</ul>
-							<a href="/kontakti" class="btn btn-primary">Запиши сесия</a>
+							<a href="/kontakti" class="btn btn-primary">Запиши своята сесия</a>
 						</div>
 					{/if}
 				</div>
@@ -130,86 +108,60 @@
 	<div class="cta-band__inner container">
 		<p class="section-tag">Първа стъпка</p>
 		<h2>Готов/а си да<br /><em>започнем?</em></h2>
-		<p>Свържи се с мен — първият разговор е безплатен и без ангажимент.</p>
-		<a href="/kontakti" class="btn btn-primary">Свържи се с мен</a>
+		<p>Свържи се с Кристина — първият разговор е безплатен и без ангажимент.</p>
+		<a href="/kontakti" class="btn btn-primary">Свържи се с Кристина</a>
 	</div>
 </section>
 
 <style>
-	/* DEMO LABEL */
-	.demo-label {
-		color: #fff;
-		text-align: center;
-		padding: 9px 16px;
-		font-family: var(--body-font);
-		font-size: 0.72rem;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		margin-top: var(--nav-h);
-	}
-
-	/* PAGE HERO */
+	/* PAGE HERO — centered, no image */
 	.page-hero {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: stretch;
+		padding: calc(var(--nav-h) + 80px) 0 90px;
+		text-align: center;
 		border-bottom: 1px solid var(--border);
-		min-height: 62vh;
 	}
 
-	.page-hero__text {
+	.page-hero__inner {
+		max-width: 800px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		padding: calc(var(--nav-h) + 40px) 72px 72px 80px;
-		max-width: 680px;
-		justify-self: end;
-		width: 100%;
-	}
-
-	.breadcrumb {
-		display: flex;
 		align-items: center;
-		gap: 10px;
-		font-size: 0.78rem;
-		color: var(--text-muted);
-		letter-spacing: 0.05em;
-		margin-bottom: 40px;
-	}
-
-	.breadcrumb a {
-		color: var(--text-muted);
-		transition: color 0.2s;
-	}
-	.breadcrumb a:hover {
-		color: var(--secondary);
 	}
 
 	.page-hero h1 {
-		font-size: clamp(3rem, 6vw, 5.5rem);
-		line-height: 1.08;
-		margin-bottom: 24px;
+		font-size: clamp(3.8rem, 8vw, 7rem);
+		line-height: 1.04;
+		margin-bottom: 44px;
 	}
 
 	.page-hero h1 em {
 		color: var(--secondary);
-		font-style: italic;
 	}
 
-	.page-hero__desc {
-		font-size: 1rem;
-		color: var(--text-muted);
-		line-height: 1.85;
-		max-width: 480px;
+	.page-hero__divider {
+		width: 52px;
+		height: 1px;
+		background: var(--secondary);
+		opacity: 0.35;
 		margin-bottom: 36px;
+	}
+
+	.page-hero__quote {
+		font-family: var(--heading-font);
+		font-size: clamp(1.1rem, 2vw, 1.45rem);
+		font-style: italic;
+		color: var(--text-muted);
+		line-height: 1.65;
+		max-width: 520px;
+		margin-bottom: 44px;
 	}
 
 	.page-hero__meta {
 		display: flex;
 		align-items: center;
-		gap: 16px;
-		font-size: 0.72rem;
-		letter-spacing: 0.14em;
+		gap: 18px;
+		font-size: 0.7rem;
+		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--secondary);
 	}
@@ -220,48 +172,6 @@
 		border-radius: 50%;
 		background: var(--secondary);
 		opacity: 0.45;
-	}
-
-	/* Hero visual (right side) */
-	.page-hero__visual {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.page-hero__img {
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(160deg, #d8c8cb 0%, #c4a8b0 35%, #a88894 65%, #8e6a76 100%);
-	}
-
-	.page-hero__quote {
-		position: absolute;
-		left: 48px;
-		bottom: 48px;
-		right: 48px;
-		max-width: 360px;
-		background: rgba(237, 234, 229, 0.92);
-		backdrop-filter: blur(2px);
-		padding: 28px 32px 30px;
-		display: flex;
-		flex-direction: column;
-		gap: 6px;
-	}
-
-	.page-hero__quote-mark {
-		font-family: var(--heading-font);
-		font-size: 3rem;
-		line-height: 0.6;
-		color: var(--secondary);
-		opacity: 0.4;
-	}
-
-	.page-hero__quote p {
-		font-family: var(--heading-font);
-		font-size: 1.25rem;
-		font-style: italic;
-		line-height: 1.4;
-		color: var(--text);
 	}
 
 	/* VISUAL ACCORDION */
@@ -279,20 +189,16 @@
 	.session {
 		display: grid;
 		grid-template-columns: 300px 1fr;
-		gap: 0;
 		background: var(--bg);
 		border: 1px solid var(--border);
 		overflow: hidden;
-		transition:
-			box-shadow 0.35s ease,
-			transform 0.35s ease;
+		transition: box-shadow 0.35s ease;
 	}
 
 	.session--open {
 		box-shadow: 0 18px 50px rgba(92, 60, 70, 0.13);
 	}
 
-	/* Media column — always visible */
 	.session__media {
 		position: relative;
 		overflow: hidden;
@@ -323,7 +229,6 @@
 		text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 	}
 
-	/* Text column */
 	.session__main {
 		display: flex;
 		flex-direction: column;
@@ -458,7 +363,6 @@
 
 	.cta-band h2 em {
 		color: var(--secondary);
-		font-style: italic;
 	}
 
 	.cta-band p {
@@ -468,39 +372,13 @@
 		line-height: 1.8;
 	}
 
-	/* HERO RESPONSIVE */
+	/* RESPONSIVE */
 	@media (max-width: 900px) {
 		.page-hero {
-			grid-template-columns: 1fr;
-			min-height: 0;
-		}
-
-		.page-hero__text {
-			padding: calc(var(--nav-h) + 32px) 24px 48px;
-			max-width: 100%;
-			justify-self: stretch;
-			order: 1;
-		}
-
-		.page-hero__visual {
-			order: 0;
-			min-height: 56vw;
-			height: 56vw;
-		}
-
-		.page-hero__quote {
-			left: 24px;
-			right: 24px;
-			bottom: 24px;
-			padding: 20px 24px 22px;
-		}
-
-		.page-hero__quote p {
-			font-size: 1.1rem;
+			padding: calc(var(--nav-h) + 48px) 0 64px;
 		}
 	}
 
-	/* MOBILE */
 	@media (max-width: 768px) {
 		.session {
 			grid-template-columns: 1fr;

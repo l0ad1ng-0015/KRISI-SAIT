@@ -45,11 +45,6 @@
 <!-- HERO -->
 <section class="page-hero">
 	<div class="page-hero__text">
-		<nav class="breadcrumb">
-			<a href="/">Начало</a>
-			<span>·</span>
-			<span>За Кристина</span>
-		</nav>
 		<h1>За<br /><em>Кристина</em></h1>
 		<p class="page-hero__desc">
 			Психотерапевт, обучител и фасилитатор с дългогодишен опит в индивидуална работа с възрастни.
@@ -164,24 +159,6 @@
 </section>
 
 <style>
-	/* ── BREADCRUMB ── */
-	.breadcrumb {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-		font-size: 0.78rem;
-		color: var(--text-muted);
-		letter-spacing: 0.05em;
-		margin-bottom: 36px;
-	}
-	.breadcrumb a {
-		color: var(--text-muted);
-		transition: color 0.2s;
-	}
-	.breadcrumb a:hover {
-		color: var(--secondary);
-	}
-
 	/* ── PAGE HERO ── */
 	.page-hero {
 		display: grid;

@@ -1,20 +1,18 @@
 <!-- HERO -->
 <section class="hero">
-	<div class="hero__text">
-		<p class="hero__tag section-tag">Психотерапевт</p>
-		<h1 class="hero__heading">
-			Кристина<br /><em>Дойчинова</em>
-		</h1>
-		<p class="hero__desc">
-			Терапевтично пространство, изградено върху доверие, присъствие и грижа — за теб, такъв какъвто
-			си.
-		</p>
-		<div class="hero__actions">
-			<a href="/kontakti" class="btn btn-primary">Запиши сесия</a>
-			<a href="#za-kristina" class="btn btn-outline">За мен</a>
+	<div class="hero__img" aria-hidden="true"></div>
+	<div class="hero__content">
+		<div class="hero__text">
+			<p class="hero__tag section-tag">Психотерапевт</p>
+			<h1 class="hero__heading">
+				Кристина<br /><em>Дойчинова</em>
+			</h1>
+			<div class="hero__actions">
+				<a href="/kontakti" class="btn btn-primary">Запиши сесия</a>
+				<a href="#za-kristina" class="btn btn-outline">За Кристина</a>
+			</div>
 		</div>
 	</div>
-	<div class="hero__image" aria-hidden="true"></div>
 </section>
 
 <!-- INTRO QUOTE -->
@@ -32,8 +30,7 @@
 <!-- ЛИЧНИ СЕСИИ -->
 <section class="split" id="lichni-sesii">
 	<div class="split__text split__text--left">
-		<p class="section-tag">01 — Лични сесии</p>
-		<h2>Индивидуална<br /><em>психотерапия</em></h2>
+		<h2>Лични<br /><em>сесии</em></h2>
 		<p class="split__body">
 			Индивидуалната сесия е пространство само за теб. Място, където можеш да говориш открито, да
 			изследваш преживяванията си и да намериш нови пътища напред — в темпото, което е удобно за
@@ -58,8 +55,7 @@
 		></div>
 	</div>
 	<div class="split__text split__text--right">
-		<p class="section-tag">02 — Обучения</p>
-		<h2>Обучения и<br /><em>семинари</em></h2>
+		<h2>Обучения &<br /><em>семинари</em></h2>
 		<p class="split__body">
 			Специализирани обучения за специалисти и всички, желаещи да задълбочат познанията си в
 			областта на психологията, себепознанието и личностното развитие.
@@ -71,11 +67,10 @@
 <!-- СЪБИТИЯ -->
 <section class="split" id="sabitiya">
 	<div class="split__text split__text--left">
-		<p class="section-tag">03 — Събития</p>
-		<h2>Групови срещи<br /><em>и уъркшопи</em></h2>
+		<h2>Групи &<br /><em>уъркшопи</em></h2>
 		<p class="split__body">
-			Групови срещи, открити лекции и уъркшопи — присъедини се към общност от хора, вървящи по пътя
-			на себепознанието и личностното израстване.
+			Групови срещи, открити лекции и уъркшопи — присъедини се към общност от хора, вървящи по
+			пътя на себепознанието и личностното израстване.
 		</p>
 		<a href="/sabitiya" class="btn btn-outline">Виж събитията</a>
 	</div>
@@ -96,7 +91,6 @@
 		></div>
 	</div>
 	<div class="about__text">
-		<p class="section-tag">За Кристина</p>
 		<h2>Кристина<br /><em>Дойчинова</em></h2>
 		<p class="about__body">
 			Кристина Дойчинова е лицензиран психотерапевт с дългогодишна практика в индивидуална терапия,
@@ -111,19 +105,38 @@
 <style>
 	/* ======= HERO ======= */
 	.hero {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
+		position: relative;
 		min-height: 100vh;
+		overflow: hidden;
+	}
+
+	.hero__img {
+		position: absolute;
+		inset: 0;
+		/* Replace with: background-image: url('/photos/kristina.jpg'); background-size: cover; background-position: right center; */
+		background: linear-gradient(135deg, #e0d4d8 0%, #c8a8b2 28%, #a07888 58%, #6b4a57 100%);
+	}
+
+	.hero__content {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		background: linear-gradient(
+			to right,
+			rgba(237, 234, 229, 0.97) 0%,
+			rgba(237, 234, 229, 0.9) 30%,
+			rgba(237, 234, 229, 0.5) 55%,
+			rgba(237, 234, 229, 0) 72%
+		);
 	}
 
 	.hero__text {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		padding: calc(var(--nav-h) + 80px) 72px 80px 80px;
-		max-width: 680px;
-		justify-self: end;
-		width: 100%;
+		padding: calc(var(--nav-h) + 80px) 80px 80px;
+		max-width: 580px;
 	}
 
 	.hero__tag {
@@ -154,11 +167,6 @@
 		display: flex;
 		gap: 16px;
 		flex-wrap: wrap;
-	}
-
-	.hero__image {
-		background: linear-gradient(160deg, #d8c8cb 0%, #c4a8b0 35%, #a88894 65%, #8e6a76 100%);
-		min-height: 100vh;
 	}
 
 	/* ======= QUOTE ======= */
@@ -302,20 +310,30 @@
 
 	/* ======= RESPONSIVE ======= */
 	@media (max-width: 900px) {
+		/* Hero — stacked on mobile */
 		.hero {
-			grid-template-columns: 1fr;
+			display: flex;
+			flex-direction: column;
+			min-height: 0;
 		}
 
-		.hero__image {
+		.hero__img {
+			position: relative;
+			inset: auto;
+			height: 62vw;
+			min-height: 240px;
 			order: -1;
-			min-height: 60vw;
-			height: 60vw;
+			flex-shrink: 0;
+		}
+
+		.hero__content {
+			min-height: 0;
+			background: none;
 		}
 
 		.hero__text {
 			padding: 48px 24px 64px;
 			max-width: 100%;
-			justify-self: stretch;
 		}
 
 		.quote-section {
@@ -350,7 +368,6 @@
 			max-width: 100%;
 		}
 
-		/* image above text on mobile for all sections */
 		.split__image {
 			order: -1;
 		}
