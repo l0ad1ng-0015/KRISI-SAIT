@@ -138,6 +138,23 @@
 			</div>
 		</div>
 
+		<div class="footer__logos">
+			<span class="footer__logos-label">Членства & партньори</span>
+			<div class="footer__logos-row">
+				<img
+					src="/logos/logo-holistic.png"
+					alt="Институт за холистична психология"
+					class="footer__logos-img footer__logos-img--sq"
+				/>
+				<img
+					src="/logos/logo-iha.png"
+					alt="International Hypnosis Association"
+					class="footer__logos-img"
+				/>
+				<img src="/logos/logo-inner-self.png" alt="Inner Self" class="footer__logos-img" />
+			</div>
+		</div>
+
 		<div class="footer__bottom">
 			<p>© {new Date().getFullYear()} Кристина Дойчинова. Всички права запазени.</p>
 			<div class="footer__legal">
@@ -355,6 +372,47 @@
 		color: rgba(237, 234, 229, 0.3);
 	}
 
+	.footer__logos {
+		padding: 36px 0;
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		flex-wrap: wrap;
+	}
+
+	.footer__logos-label {
+		font-size: 0.68rem;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: rgba(237, 234, 229, 0.25);
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+
+	.footer__logos-row {
+		display: flex;
+		align-items: center;
+		gap: 36px;
+		flex-wrap: wrap;
+	}
+
+	.footer__logos-img {
+		height: 48px;
+		width: auto;
+		object-fit: contain;
+		mix-blend-mode: screen;
+		opacity: 0.72;
+		transition: opacity 0.22s ease;
+	}
+
+	.footer__logos-img--sq {
+		height: 64px;
+	}
+
+	.footer__logos-img:hover {
+		opacity: 1;
+	}
+
 	.footer__bottom {
 		display: flex;
 		justify-content: space-between;
@@ -412,6 +470,24 @@
 		.footer__top {
 			grid-template-columns: 1fr;
 			gap: 40px;
+		}
+
+		.footer__logos {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+		}
+
+		.footer__logos-row {
+			gap: 24px;
+		}
+
+		.footer__logos-img {
+			height: 40px;
+		}
+
+		.footer__logos-img--sq {
+			height: 52px;
 		}
 
 		.footer__bottom {

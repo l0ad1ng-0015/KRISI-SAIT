@@ -1,27 +1,4 @@
 <script>
-	const credentials = [
-		{
-			year: '2024',
-			title: 'Примерен сертификат',
-			org: 'Институт по психотерапия, София'
-		},
-		{
-			year: '2022',
-			title: 'Примерен сертификат',
-			org: 'Институт по психотерапия, София'
-		},
-		{
-			year: '2021',
-			title: 'Примерен сертификат',
-			org: 'Институт по психотерапия, София'
-		},
-		{
-			year: '2019',
-			title: 'Примерен сертификат',
-			org: 'Институт по психотерапия, София"'
-		}
-	];
-
 	const pillars = [
 		{
 			title: 'Без осъждане',
@@ -101,36 +78,12 @@
 	</div>
 </section>
 
-<!-- ОБРАЗОВАНИЕ -->
-<section class="education">
-	<div class="education__inner container">
-		<div class="education__left">
-			<span class="section-tag">Образование</span>
-			<h2>Квалификации<br />& <em>сертификати</em></h2>
-			<p class="education__sub">
-				Непрекъснато надграждане на знанията, за да предоставям актуална и качествена помощ.
-			</p>
-		</div>
-		<ul class="education__list">
-			{#each credentials as item}
-				<li class="credential">
-					<span class="credential__year">{item.year}</span>
-					<div class="credential__body">
-						<p class="credential__title">{item.title}</p>
-						<p class="credential__org">{item.org}</p>
-					</div>
-				</li>
-			{/each}
-		</ul>
-	</div>
-</section>
-
 <!-- ПОДХОД -->
 <section class="approach">
 	<div class="approach__inner container">
 		<header class="approach__header">
 			<span class="section-tag">Подходът</span>
-			<h2>Как работя<br /><em>с теб</em></h2>
+			<h2>Подхода<br /><em>на работа</em></h2>
 			<p class="approach__intro">
 				Няма универсален метод. Работата ни заедно се гради на доверие, уважение и готовност и от
 				двете страни.
@@ -347,79 +300,6 @@
 		line-height: 1.45;
 	}
 
-	/* ── EDUCATION ── */
-	.education {
-		background: #e8e3dc;
-		padding: var(--section-v) 0;
-		border-top: 1px solid var(--border);
-		border-bottom: 1px solid var(--border);
-	}
-
-	.education__inner {
-		display: grid;
-		grid-template-columns: 380px 1fr;
-		gap: 0 80px;
-		align-items: start;
-	}
-
-	.education__left h2 {
-		font-size: clamp(2rem, 3.2vw, 3rem);
-		line-height: 1.1;
-		margin-top: 14px;
-		margin-bottom: 18px;
-	}
-
-	.education__left h2 em {
-		color: var(--secondary);
-		font-style: italic;
-	}
-
-	.education__sub {
-		font-size: 0.9rem;
-		color: var(--text-muted);
-		line-height: 1.85;
-		max-width: 300px;
-	}
-
-	.education__list {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-
-	.credential {
-		display: flex;
-		gap: 28px;
-		align-items: baseline;
-		padding: 26px 0;
-		border-bottom: 1px solid rgba(113, 73, 85, 0.12);
-	}
-
-	.credential:first-child {
-		border-top: 1px solid rgba(113, 73, 85, 0.12);
-	}
-
-	.credential__year {
-		font-family: var(--heading-font);
-		font-size: 1.1rem;
-		font-style: italic;
-		color: var(--secondary);
-		min-width: 52px;
-		flex-shrink: 0;
-	}
-
-	.credential__title {
-		font-size: 0.95rem;
-		color: var(--text);
-		margin-bottom: 5px;
-		line-height: 1.4;
-	}
-
-	.credential__org {
-		font-size: 0.82rem;
-		color: var(--text-muted);
-	}
-
 	/* ── APPROACH ── */
 	.approach {
 		padding: var(--section-v) 0;
@@ -575,15 +455,6 @@
 		.story__portrait {
 			position: static;
 			max-width: 400px;
-		}
-
-		.education__inner {
-			grid-template-columns: 1fr;
-			gap: 40px 0;
-		}
-
-		.education__sub {
-			max-width: 100%;
 		}
 
 		.approach__pillars {

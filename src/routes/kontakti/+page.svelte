@@ -112,9 +112,9 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
 	<div class="page-hero__inner container">
-		<h1>Свържи се<br /><em>с мен</em></h1>
+		<h1>Свържи се с<br /><em>Кристина</em></h1>
 		<p class="page-hero__desc">
-			Имаш въпрос или искаш да запишеш сесия? Пиши ми — отговарям лично на всяко съобщение.
+			Имаш въпрос или искаш да запишеш сесия? Пиши — Кристина отговаря лично на всяко съобщение.
 		</p>
 	</div>
 </section>
@@ -141,7 +141,7 @@
 <section class="form-section">
 	<div class="form-section__inner">
 		<p class="section-tag" style="text-align:center;">Контактна форма</p>
-		<h2 class="form-section__title">Напиши ми <em>съобщение</em></h2>
+		<h2 class="form-section__title">Запиши своята <em>сесия</em></h2>
 
 		{#if submitSuccess}
 			<div class="alert alert--success">
@@ -154,7 +154,7 @@
 						stroke-linejoin="round"
 					/>
 				</svg>
-				<p>Благодаря! Съобщението беше изпратено успешно. Ще се свържа с теб скоро.</p>
+				<p>Благодаря! Съобщението беше изпратено успешно. Кристина ще се свърже с теб скоро.</p>
 			</div>
 		{/if}
 		{#if statusMessage && !submitSuccess}
@@ -213,7 +213,7 @@
 						<option value="">Избери сесия</option>
 						<option value="Лична сесия">Лична сесия</option>
 						<option value="Онлайн сесия">Онлайн сесия</option>
-						<option value="Интегративна сесия">Интегративна сесия</option>
+						<option value="Медитативна сесия">Медитативна сесия</option>
 						<option value="Друго / не съм сигурен/на">Друго / не съм сигурен/на</option>
 					</select>
 					{#if errors.sessionType}<span class="form__error">{errors.sessionType}</span>{/if}
