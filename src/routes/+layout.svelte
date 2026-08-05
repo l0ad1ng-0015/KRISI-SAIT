@@ -281,7 +281,6 @@
 		gap: 60px;
 		padding-bottom: 56px;
 		border-bottom: 1px solid rgba(237, 234, 229, 0.1);
-		margin-bottom: 32px;
 	}
 
 	.footer__logo {
@@ -374,6 +373,7 @@
 
 	.footer__logos {
 		padding: 36px 0;
+		border-top: 1px solid rgba(237, 234, 229, 0.08);
 		display: flex;
 		align-items: center;
 		gap: 40px;
