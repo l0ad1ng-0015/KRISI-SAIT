@@ -44,16 +44,17 @@
 		openIndex = openIndex === i ? null : i;
 	};
 
-	let formData = $state(events.map(() => ({ name: '', email: '', phone: '' })));
+	let formData = $state(events.map(() => ({ name: '', email: '', phone: '', agree: false })));
 	let formStatus = $state(events.map(() => ''));
 	let formError = $state(events.map(() => ''));
 
 	function validate(i) {
-		const { name, email, phone } = formData[i];
+		const { name, email, phone, agree } = formData[i];
 		if (!name.trim()) return 'Въведи своето име.';
 		if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
 			return 'Въведи валиден имейл.';
 		if (!phone.trim() || !/^[\d\s+\-()]{7,}$/.test(phone)) return 'Въведи валиден телефон.';
+		if (!agree) return 'Необходимо е съгласие с обработката на личните данни.';
 		return null;
 	}
 
@@ -218,6 +219,15 @@
 											/>
 										</div>
 									</div>
+
+									<label class="event__agree">
+										<input
+											type="checkbox"
+											bind:checked={formData[i].agree}
+											onchange={() => clearError(i)}
+										/>
+										<span>Съгласявам се личните ми данни да бъдат обработени за целите на регистрацията.</span>
+									</label>
 
 									{#if formStatus[i] === 'error'}
 										<p class="event__error">{formError[i]}</p>
@@ -538,6 +548,52 @@
 	.event__field input::placeholder {
 		color: var(--text-muted);
 		opacity: 0.5;
+	}
+
+	.event__agree {
+		display: flex;
+		align-items: flex-start;
+		gap: 12px;
+		margin-bottom: 20px;
+		cursor: pointer;
+	}
+
+	.event__agree input[type='checkbox'] {
+		appearance: none;
+		-webkit-appearance: none;
+		width: 18px;
+		height: 18px;
+		border: 1px solid var(--border);
+		background: var(--bg);
+		flex-shrink: 0;
+		margin-top: 1px;
+		cursor: pointer;
+		transition: background 0.18s, border-color 0.18s;
+		position: relative;
+	}
+
+	.event__agree input[type='checkbox']:checked {
+		background: var(--secondary);
+		border-color: var(--secondary);
+	}
+
+	.event__agree input[type='checkbox']:checked::after {
+		content: '';
+		position: absolute;
+		left: 4px;
+		top: 1px;
+		width: 6px;
+		height: 10px;
+		border: 1.5px solid #fff;
+		border-top: none;
+		border-left: none;
+		transform: rotate(45deg);
+	}
+
+	.event__agree span {
+		font-size: 0.82rem;
+		color: var(--text-muted);
+		line-height: 1.65;
 	}
 
 	.event__error {
