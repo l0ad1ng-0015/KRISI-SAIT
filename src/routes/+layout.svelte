@@ -50,6 +50,25 @@
 		{ href: '/kontakti', label: 'Контакти' }
 	];
 
+	// Schema.org JSON-LD — helps Google understand Kristina is a therapist in Sofia
+	const ldJson = JSON.stringify({
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		'@id': 'https://kristinadoychinova.com/#kristina',
+		name: 'Кристина Дойчинова',
+		jobTitle: 'Ментор',
+		url: 'https://kristinadoychinova.com',
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: 'София',
+			addressCountry: 'BG'
+		},
+		description:
+			'Ментор в себепознанието и психо-емоционалните динамики в София — индивидуални сесии, обучения и групова работа.',
+		knowsAbout: ['Психотерапия', 'Хипнотерапия', 'Медитация', 'Личностно развитие'],
+		sameAs: ['https://www.facebook.com/kristina.doychinova']
+	});
+
 	onMount(() => {
 		const onScroll = () => {
 			scrolled = window.scrollY > 40;
@@ -61,11 +80,18 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Кристина Дойчинова — Психотерапевт</title>
+	<link rel="canonical" href="https://kristinadoychinova.com{page.url.pathname}" />
+	<title>Кристина Дойчинова — Ментор в Себепознанието</title>
 	<meta
 		name="description"
-		content="Индивидуална психотерапия, обучения и групова работа с Кристина Дойчинова."
+		content="Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Индивидуални сесии, обучения и групова работа."
 	/>
+	<!-- Open Graph defaults (pages override og:title and og:description) -->
+	<meta property="og:site_name" content="Кристина Дойчинова" />
+	<meta property="og:locale" content="bg_BG" />
+	<meta property="og:type" content="website" />
+	<!-- Schema.org JSON-LD -->
+	{@html `<script type="application/ld+json">${ldJson}</script>`}
 </svelte:head>
 
 <header class="nav" class:nav--scrolled={scrolled}>
@@ -102,7 +128,7 @@
 			<div class="footer__brand">
 				<span class="footer__logo">КД</span>
 				<p class="footer__tagline">
-					Кристина Дойчинова<br /><em>Психотерапевт</em>
+					Кристина Дойчинова<br /><em>Ментор</em>
 				</p>
 			</div>
 

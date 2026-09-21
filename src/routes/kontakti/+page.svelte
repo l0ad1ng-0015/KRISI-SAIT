@@ -102,11 +102,11 @@
 </script>
 
 <svelte:head>
-	<title>Контакти — Кристина Дойчинова</title>
-	<meta
-		name="description"
-		content="Свържи се с Кристина Дойчинова за записване на сесия — имейл, телефон и контактна форма."
-	/>
+	<title>Контакти — Запишете Сесия | Кристина Дойчинова</title>
+	<meta name="description" content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете индивидуална сесия или задайте въпрос чрез контактната форма." />
+	<meta property="og:title" content="Контакти — Запишете Сесия | Кристина Дойчинова" />
+	<meta property="og:description" content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете индивидуална сесия или задайте въпрос чрез контактната форма." />
+	<meta property="og:url" content="https://kristinadoychinova.com/kontakti" />
 </svelte:head>
 
 <!-- PAGE HERO -->
@@ -211,8 +211,8 @@
 						class:input--error={errors.sessionType}
 					>
 						<option value="">Избери сесия</option>
-						<option value="Лична сесия">Лична сесия</option>
-						<option value="Онлайн сесия">Онлайн сесия</option>
+						<option value="Индивидуална среща — на живо">Индивидуална среща — на живо</option>
+						<option value="Индивидуална среща — онлайн">Индивидуална среща — онлайн</option>
 						<option value="Медитативна сесия">Медитативна сесия</option>
 						<option value="Друго / не съм сигурен/на">Друго / не съм сигурен/на</option>
 					</select>

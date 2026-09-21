@@ -1,22 +1,37 @@
 <script>
+	import { slide } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
+
+	let expanded = $state(false);
+
 	const pillars = [
 		{
-			title: 'Без осъждане',
-			desc: 'Терапевтичното пространство е безопасно по дефиниция. Всичко, което споделяш, се приема с уважение и остава поверително.'
+			title: 'Всичко в теб е наред',
+			desc: 'Твоята същност е по-голяма от историите, които си научил за себе си'
 		},
 		{
-			title: 'Персонализиран темп',
-			desc: 'Не работя по схема — намираме заедно ритъма и методите, които работят именно за теб и твоята ситуация.'
+			title: 'Мирът е твоята природа',
+			desc: 'Да бъдеш свързан със себе си, докато преживяваш живота такъв, какъвто идва'
 		},
 		{
-			title: 'Интегративен метод',
-			desc: 'Комбинирам когнитивно-поведенчески, хуманистични и телесноориентирани техники според нуждата на момента.'
+			title: 'Автентичността е свобода',
+			desc: 'Да живееш в съгласие със себе си и с онова, което истински има значение за теб'
 		}
 	];
 </script>
 
 <svelte:head>
-	<title>За Кристина — Кристина Дойчинова</title>
+	<title>За Кристина Дойчинова — Ментор в Себепознанието</title>
+	<meta
+		name="description"
+		content="Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Повече от 20 години работа с хора. Свободата започва със себепознанието."
+	/>
+	<meta property="og:title" content="За Кристина Дойчинова — Ментор в Себепознанието" />
+	<meta
+		property="og:description"
+		content="Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Повече от 20 години работа с хора. Свободата започва със себепознанието."
+	/>
+	<meta property="og:url" content="https://kristinadoychinova.com/za-kristina" />
 </svelte:head>
 
 <!-- HERO -->
@@ -24,10 +39,10 @@
 	<div class="page-hero__text">
 		<h1>За<br /><em>Кристина</em></h1>
 		<p class="page-hero__desc">
-			Психотерапевт, обучител и фасилитатор с дългогодишен опит в индивидуална работа с възрастни.
+			Ментор в себепознанието, обучител и фасилитатор с над 20 години опит в работата с хора.
 		</p>
 		<div class="page-hero__meta">
-			<span>Психотерапевт</span>
+			<span>Ментор</span>
 			<span class="page-hero__dot"></span>
 			<span>Обучител</span>
 			<span class="page-hero__dot"></span>
@@ -50,23 +65,61 @@
 			<span class="section-tag">История</span>
 			<h2 class="story__heading">Моят<br /><em>път</em></h2>
 			<blockquote class="story__pull">
-				Пътят към психотерапията не беше права линия — беше среща с въпроси, на които нямах готови
-				отговори.
+				Повече от 20 години изследвам човешката психика, а над 17 от тях прекарах в
+				психотерапевтичния кабинет.
 			</blockquote>
 			<p class="story__lead-p">
-				Израснах с любопитство към хората — защо реагираме по начина, по който го правим; какво стои
-				зад решенията, болките и радостите ни. Това любопитство ме отведе първо до психологията,
-				после до психотерапията.
+				Пътят ми премина през психологията, хипнозата, работата с тялото, коучинга, различни
+				терапевтични и духовни системи. Създадох свои методи, преподавах и работих с хиляди хора и
+				ученици.
 			</p>
-			<p class="story__p">
-				Завърших психология в Софийски университет, след което преминах специализирано обучение по
-				интегративна психотерапия. Работила съм в различни контексти — с деца, юноши и възрастни, в
-				клинична среда и в частна практика.
-			</p>
-			<p class="story__p">
-				Днес работя изцяло индивидуално, защото вярвам в силата на дълбоката терапевтична връзка —
-				онова пространство между двама души, в което наистина е възможна промяна.
-			</p>
+			<p class="story__p">И точно този опит ме отведе отвъд методите.</p>
+
+			{#if expanded}
+				<div transition:slide={{ duration: 360, easing: cubicOut }}>
+					<p class="story__p">
+						Разбрах, че нищо в нас не се нуждае от поправка, а от свобода. Че не самите ситуации ни
+						определят, а значенията, които сме се научили да им придаваме. Ограничени сме от това,
+						което сме повярвали за себе си и възможностите си, от онова което сме научили.
+					</p>
+					<p class="story__p">
+						Несъзнателното ни поле е изпълнено с истории, убеждения, емоционални модели, стратегии,
+						които някога са ни били нужни, но днес често се превръщат в най-големите пречки.
+					</p>
+					<p class="story__p">
+						Днес работата ми е да помагам на човек да разпознае тези невидими конструкции, да разбере
+						динамиките, които са ги формирали и излезе отвъд тях. Да се приближи до онова, което
+						винаги е било в сърцевината на моята работа — дълбокото свързване със себе си, с живота и
+						с любовта.
+					</p>
+					<p class="story__p story__p--emphasis">
+						Затова днес определям себе си като ментор в себепознанието и психо-емоционалните
+						динамики.<br />
+						Не защото съм оставила терапията зад себе си.<br />
+						А защото пътят ми ме отведе отвъд нея.
+					</p>
+				</div>
+			{/if}
+
+			<button class="story__toggle" onclick={() => (expanded = !expanded)}>
+				{expanded ? 'Покажи по-малко' : 'Прочети повече'}
+				<svg
+					class="story__toggle-icon"
+					class:story__toggle-icon--up={expanded}
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+				>
+					<path
+						d="M3 5.5L8 10.5L13 5.5"
+						stroke="currentColor"
+						stroke-width="1.4"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+			</button>
 		</div>
 		<div class="story__portrait" aria-hidden="true">
 			<div class="story__portrait-img"></div>
@@ -83,12 +136,35 @@
 	<div class="approach__inner container">
 		<header class="approach__header">
 			<span class="section-tag">Подходът</span>
-			<h2>Подхода<br /><em>на работа</em></h2>
+			<h2><em>Свободата</em> започва<br />със себепознанието!</h2>
 			<p class="approach__intro">
-				Няма универсален метод. Работата ни заедно се гради на доверие, уважение и готовност и от
-				двете страни.
+				Като ментор помагам на хората да осъзнаят и предефинират менталните матрици, които
+				ограничават благополучието и удовлетворението от живота им.
 			</p>
 		</header>
+
+		<div class="approach__body">
+			<p class="approach__lead">Независимо дали се стремите към:</p>
+			<ul class="approach__list">
+				<li>По-добри взаимоотношения със себе си, другите и света</li>
+				<li>Повече усещане за вътрешен мир — намаляване на стреса и тревожността</li>
+				<li>Повече яснота за самите вас и вашите ситуации — вашите чувства и поведения</li>
+				<li>
+					По-добро разбиране и свързване с емоционалния ви свят — връзка с невидимата ви навигационна
+					система
+				</li>
+				<li>Или повече чувство на свобода и автентичност</li>
+			</ul>
+			<p class="approach__note">Личните сесии ще ви отведат към точната посока.</p>
+			<p class="approach__p">
+				Като ментор помагам на хората да разпознаят онова, което ги отдалечава от собствената им
+				природа. Да разберат объркването, емоциите и моделите, които повтарят. Да научат онова, което
+				някога не са имали възможност да научат. И да открият повече свобода в начина, по който
+				мислят, чувстват, избират и живеят, за да достигнат благополучието и изобилието, което желаят
+				в своя живот.
+			</p>
+		</div>
+
 		<div class="approach__pillars">
 			{#each pillars as pillar, i}
 				<div class="pillar">
@@ -105,9 +181,8 @@
 <section class="cta-band">
 	<div class="cta-band__inner container">
 		<p class="section-tag">Първа стъпка</p>
-		<h2>Свържи се<br /><em>с мен</em></h2>
-		<p>Първият разговор е безплатен и без ангажимент — просто разговор.</p>
-		<a href="/kontakti" class="btn btn-primary">Напиши ми</a>
+		<h2>Свържи се<br /><em>с Кристина</em></h2>
+		<a href="/kontakti" class="btn btn-primary">Пиши ѝ</a>
 	</div>
 </section>
 
@@ -264,6 +339,43 @@
 		max-width: 580px;
 	}
 
+	.story__p--emphasis {
+		color: var(--text);
+		font-style: italic;
+		border-left: 2px solid var(--secondary);
+		padding-left: 20px;
+		margin-top: 28px;
+	}
+
+	.story__toggle {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		margin-top: 12px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: 0.78rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--secondary);
+		padding: 0;
+		transition: opacity 0.2s;
+	}
+
+	.story__toggle:hover {
+		opacity: 0.7;
+	}
+
+	.story__toggle-icon {
+		transition: transform 0.3s ease;
+		flex-shrink: 0;
+	}
+
+	.story__toggle-icon--up {
+		transform: rotate(180deg);
+	}
+
 	/* Portrait */
 	.story__portrait {
 		position: sticky;
@@ -331,6 +443,60 @@
 		font-size: 0.95rem;
 		color: var(--text-muted);
 		line-height: 1.85;
+	}
+
+	.approach__body {
+		max-width: 680px;
+		margin: 0 auto 72px;
+	}
+
+	.approach__lead {
+		font-size: 0.95rem;
+		color: var(--text);
+		font-weight: 500;
+		margin-bottom: 18px;
+	}
+
+	.approach__list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 28px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.approach__list li {
+		font-size: 0.92rem;
+		color: var(--text-muted);
+		line-height: 1.7;
+		padding-left: 22px;
+		position: relative;
+	}
+
+	.approach__list li::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 10px;
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: var(--secondary);
+		opacity: 0.5;
+	}
+
+	.approach__note {
+		font-size: 0.92rem;
+		color: var(--secondary);
+		font-style: italic;
+		margin-bottom: 32px;
+	}
+
+	.approach__p {
+		font-size: 0.92rem;
+		color: var(--text-muted);
+		line-height: 1.95;
 	}
 
 	.approach__pillars {

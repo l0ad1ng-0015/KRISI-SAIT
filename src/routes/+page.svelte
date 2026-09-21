@@ -1,9 +1,23 @@
+<svelte:head>
+	<title>Кристина Дойчинова — Ментор в Себепознанието</title>
+	<meta
+		name="description"
+		content="Свободата започва със себепознанието. Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Индивидуални сесии, обучения и събития."
+	/>
+	<meta property="og:title" content="Кристина Дойчинова — Ментор в Себепознанието" />
+	<meta
+		property="og:description"
+		content="Свободата започва със себепознанието. Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Индивидуални сесии, обучения и събития."
+	/>
+	<meta property="og:url" content="https://kristinadoychinova.com/" />
+</svelte:head>
+
 <!-- HERO -->
 <section class="hero">
 	<div class="hero__img" aria-hidden="true"></div>
 	<div class="hero__content">
 		<div class="hero__text">
-			<p class="hero__tag section-tag">Психотерапевт</p>
+			<p class="hero__tag section-tag">Ментор</p>
 			<h1 class="hero__heading">
 				Кристина<br /><em>Дойчинова</em>
 			</h1>
@@ -20,9 +34,8 @@
 	<div class="quote-section__inner container">
 		<span class="quote-section__mark">"</span>
 		<p class="quote-section__text">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-			labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-			laboris nisi ut aliquip ex ea commodo consequat.
+			"Истинският мир не е липсата на конфликти, а е присъствието на абсолютната тишина в душата."
+			Садгуру
 		</p>
 	</div>
 </section>
@@ -33,26 +46,51 @@
 		<h2>Лични<br /><em>сесии</em></h2>
 		<p class="split__body">
 			Индивидуалната сесия е пространство само за теб. Място, където можеш да говориш открито, да
-			изследваш преживяванията си и да намериш нови пътища напред — в темпото, което е удобно за
+			изследваш преживяванията си и да намириш нови пътища напред — в темпото, което е удобно за
 			теб.
 		</p>
 		<a href="/lichni-sesii" class="btn btn-outline">Научи повече</a>
 	</div>
 	<div class="split__image" aria-hidden="true">
-		<div
-			class="img-ph"
-			style="background: linear-gradient(150deg, #d4bfc3 0%, #b8989f 50%, #9e7a84 100%);"
-		></div>
+		<div class="img-ph img-ph--sesii"></div>
+	</div>
+</section>
+
+<!-- СЪБИТИЯ -->
+<section class="split split--alt" id="sabitiya">
+	<div class="split__image" aria-hidden="true">
+		<div class="img-ph img-ph--sabitiya"></div>
+	</div>
+	<div class="split__text split__text--right">
+		<h2>Групи &<br /><em>уъркшопи</em></h2>
+		<p class="split__body">
+			Групови срещи, открити лекции и уъркшопи — присъедини се към общност от хора, вървящи по пътя
+			на себепознанието и личностното израстване.
+		</p>
+		<a href="/sabitiya" class="btn btn-outline">Виж събитията</a>
+	</div>
+</section>
+
+<!-- ЗА КРИСТИНА -->
+<section class="about" id="za-kristina">
+	<div class="about__text">
+		<h2>Кристина<br /><em>Дойчинова</em></h2>
+		<p class="about__body">
+			Ментор в себепознанието и психо-емоционалните динамики с над 20 години опит. Кристина помага
+			на хората да разпознаят и надградят менталните матрици, които ограничават благополучието им —
+			и да открият повече свобода в начина, по който мислят, чувстват и живеят.
+		</p>
+		<a href="/za-kristina" class="btn btn-outline">Прочети повече</a>
+	</div>
+	<div class="about__image" aria-hidden="true">
+		<div class="img-ph img-ph--about"></div>
 	</div>
 </section>
 
 <!-- ОБУЧЕНИЯ -->
 <section class="split split--alt" id="obucheniya">
 	<div class="split__image" aria-hidden="true">
-		<div
-			class="img-ph"
-			style="background: linear-gradient(150deg, #cec8c0 0%, #b0a89e 50%, #958d83 100%);"
-		></div>
+		<div class="img-ph img-ph--obucheniya"></div>
 	</div>
 	<div class="split__text split__text--right">
 		<h2>Обучения &<br /><em>семинари</em></h2>
@@ -61,44 +99,6 @@
 			областта на психологията, себепознанието и личностното развитие.
 		</p>
 		<a href="/obucheniya" class="btn btn-outline">Виж обученията</a>
-	</div>
-</section>
-
-<!-- СЪБИТИЯ -->
-<section class="split" id="sabitiya">
-	<div class="split__text split__text--left">
-		<h2>Групи &<br /><em>уъркшопи</em></h2>
-		<p class="split__body">
-			Групови срещи, открити лекции и уъркшопи — присъедини се към общност от хора, вървящи по
-			пътя на себепознанието и личностното израстване.
-		</p>
-		<a href="/sabitiya" class="btn btn-outline">Виж събитията</a>
-	</div>
-	<div class="split__image" aria-hidden="true">
-		<div
-			class="img-ph"
-			style="background: linear-gradient(150deg, #bcc8d8 0%, #9aabbc 50%, #7d90a8 100%);"
-		></div>
-	</div>
-</section>
-
-<!-- ЗА КРИСТИНА -->
-<section class="about" id="za-kristina">
-	<div class="about__image" aria-hidden="true">
-		<div
-			class="img-ph"
-			style="background: linear-gradient(150deg, #d0c0c4 0%, #b89098 50%, #a07880 100%);"
-		></div>
-	</div>
-	<div class="about__text">
-		<h2>Кристина<br /><em>Дойчинова</em></h2>
-		<p class="about__body">
-			Кристина Дойчинова е лицензиран психотерапевт с дългогодишна практика в индивидуална терапия,
-			обучения и групова работа. Нейният подход е топъл, внимателен и ориентиран към реалните нужди
-			на всеки човек — независимо дали търсиш подкрепа в труден момент или искаш да разбереш себе си
-			по-добре.
-		</p>
-		<a href="/za-kristina" class="btn btn-outline">Прочети повече</a>
 	</div>
 </section>
 
@@ -153,14 +153,6 @@
 	.hero__heading em {
 		color: var(--secondary);
 		font-style: italic;
-	}
-
-	.hero__desc {
-		font-size: 1rem;
-		color: var(--text-muted);
-		max-width: 400px;
-		margin-bottom: 44px;
-		line-height: 1.85;
 	}
 
 	.hero__actions {
@@ -308,6 +300,20 @@
 		max-width: 440px;
 	}
 
+	/* ======= PLACEHOLDER GRADIENTS ======= */
+	.img-ph--sesii {
+		background: linear-gradient(150deg, #d4bfc3 0%, #b8989f 50%, #9e7a84 100%);
+	}
+	.img-ph--sabitiya {
+		background: linear-gradient(150deg, #bcc8d8 0%, #9aabbc 50%, #7d90a8 100%);
+	}
+	.img-ph--about {
+		background: linear-gradient(150deg, #d0c0c4 0%, #b89098 50%, #a07880 100%);
+	}
+	.img-ph--obucheniya {
+		background: linear-gradient(150deg, #cec8c0 0%, #b0a89e 50%, #958d83 100%);
+	}
+
 	/* ======= RESPONSIVE ======= */
 	@media (max-width: 900px) {
 		/* Hero — stacked on mobile */
@@ -334,14 +340,6 @@
 		.hero__text {
 			padding: 48px 24px 64px;
 			max-width: 100%;
-		}
-
-		.quote-section {
-			padding: 56px 0;
-		}
-
-		.quote-section__mark {
-			font-size: 4rem;
 		}
 
 		.split,
