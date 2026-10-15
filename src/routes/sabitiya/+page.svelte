@@ -2,10 +2,6 @@
 	import { slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 
-	// ⚠️ TODO: Replace with Kristina's own Telegram credentials before launch
-	const TELEGRAM_BOT_ID = '8661181029:AAG4qHaigfPlvbFfflclSSTLDC4zw4P0LMc';
-	const TELEGRAM_CHAT_ID = '-5553436765';
-
 	const events = [
 		{
 			num: '01',
@@ -20,10 +16,9 @@
 				'За специалистите, които работят с хора, срещите са и възможност да наблюдават на живо работата с психо-емоционални динамики и да разширят разбирането си за човешката психика.'
 			],
 			details: ['90 мин', 'Присъствено', 'Малка група'],
-			ticket: true,
-			ticketNote:
-				'След регистрацията Кристина ще се свърже с теб с информация за закупуване на билет.',
 			date: 'Скоро',
+			// ⚠️ TODO: Replace with the actual Google Form URL for this event
+			formUrl: 'https://forms.gle/QGfdce8Nzqj44r1N8',
 			gradient: 'linear-gradient(180deg, #c4a8b0 0%, #9e7a84 100%)'
 		},
 		{
@@ -39,27 +34,35 @@
 				'Срещите се провеждат в Zoom.'
 			],
 			details: ['60 мин', 'Zoom', '40 мин медитация · 20 мин споделяне'],
-			ticket: false,
 			date: 'Събота, 24 Октомври · 9:30–10:30',
+			// ⚠️ TODO: Replace with the actual Google Form URL for this event
+			formUrl: 'https://forms.gle/QGfdce8Nzqj44r1N8',
 			gradient: 'linear-gradient(180deg, #a0b0bc 0%, #738290 100%)'
 		},
 		{
 			num: '03',
 			type: 'Онлайн',
-			title: 'Водена визуализация',
+			title: 'Уебинари',
 			paras: [
-				'Започваме с 40 минути водена визуализация и оставащо време за споделяне.',
-				'Водената визуализация е пространство за среща с вътрешния свят чрез силата на въображението, образите и насоченото внимание.',
-				'В сесията постепенно се отдалечаваме от обичайния поток на мислите и позволяваме на съзнанието да се движи отвъд познатите рамки. Чрез думи, образи, усещания и вътрешни асоциации създаваме преживяване, което ни помага да видим себе си и възможностите пред нас от различна перспектива.',
-				'Срещите са насочени към конкретна тема, намерение или житейска посока. Те създават пространство, в което можем не само да мислим за желаната промяна, а да се доближим до нея чрез вътрешно преживяване и усещане.',
-				'Това е начин да дадем форма на онова, което все още няма форма — да разширим представата си за възможното и да създадем по-ясна вътрешна посока.',
-				'Понякога, преди да направим крачка към нещо ново, е необходимо първо да си позволим да го видим отвътре.',
-				'Срещите са безплатни и се провеждат в Zoom.'
+				'Онлайн срещи, посветени на темите, които присъстват в живота на всеки от нас — емоции, отношения, вътрешни конфликти, избори и повтарящи се модели.',
+				'Във всеки уебинар разглеждаме една конкретна тема, за да разберем какво стои зад онова, което чувстваме, мислим и преживяваме.',
+				'Знание, което ни помага да виждаме по-ясно себе си и да живеем с повече разбиране, свобода и вътрешен мир.',
+				'Понякога една нова перспектива е достатъчна, за да промени начина, по който преживяваме цял аспект от живота си.'
 			],
-			details: ['60 мин', 'Zoom', 'Безплатно'],
-			ticket: false,
-			free: true,
-			date: 'Събота, 31 Октомври · 9:30–10:30',
+			details: ['60 мин', 'Zoom', 'Различни теми'],
+			date: 'Различни дати',
+			webinars: [
+				{
+					title: 'Какво са психо-емоционалните динамики?',
+					paras: [
+						'Защо реагираме по определен начин? Защо някои ситуации ни засягат толкова силно? И защо едни и същи преживявания сякаш се появяват отново в различни форми?',
+						'В тази среща ще разгледаме невидимите връзки между преживяванията, емоциите, убежденията и реакциите ни. Начина, по който те оформят отношенията, изборите и ежедневието ни.'
+					],
+					date: 'Скоро',
+					// ⚠️ TODO: Replace with the actual Google Form URL for this webinar
+					formUrl: 'https://forms.gle/QGfdce8Nzqj44r1N8'
+				}
+			],
 			gradient: 'linear-gradient(180deg, #b0a0c0 0%, #7e7894 100%)'
 		}
 	];
@@ -70,62 +73,13 @@
 	const toggle = (i) => {
 		openIndex = openIndex === i ? null : i;
 	};
-
-	let formData = $state(events.map(() => ({ name: '', email: '', phone: '', agree: false })));
-	let formStatus = $state(events.map(() => ''));
-	let formError = $state(events.map(() => ''));
-
-	function validate(i) {
-		const { name, email, phone, agree } = formData[i];
-		if (!name.trim()) return 'Въведи своето име.';
-		if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-			return 'Въведи валиден имейл.';
-		if (!phone.trim() || !/^[\d\s+\-()]{7,}$/.test(phone)) return 'Въведи валиден телефон.';
-		if (!agree) return 'Необходимо е съгласие с обработката на личните данни.';
-		return null;
-	}
-
-	async function handleRegister(e, i) {
-		e.preventDefault();
-		const err = validate(i);
-		if (err) {
-			formStatus[i] = 'error';
-			formError[i] = err;
-			return;
-		}
-		formStatus[i] = 'loading';
-
-		const { name, email, phone } = formData[i];
-		const ev = events[i];
-		const text = `📅 Регистрация за събитие\n\n🎟 ${ev.title} (${ev.type})\n👤 Участник: ${name}\n📧 Имейл: ${email}\n📱 Телефон: ${phone}`;
-
-		try {
-			const res = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_ID}/sendMessage`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text })
-			});
-			if (res.ok) {
-				formStatus[i] = 'success';
-			} else {
-				throw new Error();
-			}
-		} catch {
-			formStatus[i] = 'error';
-			formError[i] = 'Грешка при изпращане. Опитай отново.';
-		}
-	}
-
-	function clearError(i) {
-		if (formStatus[i] === 'error') formStatus[i] = '';
-	}
 </script>
 
 <svelte:head>
 	<title>Предстоящи Събития — Кристина Дойчинова | Ментор</title>
-	<meta name="description" content="Вътрешен мир и автентичност, онлайн медитации и водени визуализации с Кристина Дойчинова. Регистрирайте се за следващото събитие." />
+	<meta name="description" content="Вътрешен мир и автентичност, онлайн медитации и уебинари с Кристина Дойчинова. Регистрирайте се за следващото събитие." />
 	<meta property="og:title" content="Предстоящи Събития — Кристина Дойчинова" />
-	<meta property="og:description" content="Вътрешен мир и автентичност, онлайн медитации и водени визуализации с Кристина Дойчинова. Регистрирайте се за следващото събитие." />
+	<meta property="og:description" content="Вътрешен мир и автентичност, онлайн медитации и уебинари с Кристина Дойчинова. Регистрирайте се за следващото събитие." />
 	<meta property="og:url" content="https://kristinadoychinova.com/sabitiya" />
 </svelte:head>
 
@@ -159,10 +113,7 @@
 								<span class="event__num">{event.num}</span>
 								<span class="event__type-tag">{event.type}</span>
 							</div>
-							<h2 class="event__title">
-								{event.title}
-								{#if event.free}<span class="event__free-badge">Безплатно</span>{/if}
-							</h2>
+							<h2 class="event__title">{event.title}</h2>
 							<p class="event__desc">{event.paras[0]}</p>
 							{#if showMore[i]}
 								<div transition:slide={{ duration: 320, easing: cubicOut }}>
@@ -200,109 +151,49 @@
 
 						<div class="event__right">
 							<span class="event__date">{event.date}</span>
-							<button
-								class="btn event__reg-btn"
-								class:btn-primary={openIndex === i}
-								class:btn-outline={openIndex !== i}
-								onclick={() => toggle(i)}
-							>
-								{openIndex === i ? 'Затвори' : 'Регистрирай се'}
-							</button>
+							{#if event.webinars}
+								<button
+									class="btn event__reg-btn"
+									class:btn-primary={openIndex === i}
+									class:btn-outline={openIndex !== i}
+									onclick={() => toggle(i)}
+								>
+									{openIndex === i ? 'Затвори' : 'Виж уебинарите'}
+								</button>
+							{:else}
+								<a
+									href={event.formUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="btn btn-outline event__reg-btn"
+								>
+									Регистрирай се
+								</a>
+							{/if}
 						</div>
 					</div>
 
-					{#if openIndex === i}
-						<div class="event__form-wrap" transition:slide={{ duration: 320, easing: cubicOut }}>
-							{#if formStatus[i] === 'success'}
-								<div class="event__success">
-									<svg
-										width="20"
-										height="20"
-										viewBox="0 0 24 24"
-										fill="none"
-										aria-hidden="true"
-									>
-										<path
-											d="M20 6L9 17l-5-5"
-											stroke="currentColor"
-											stroke-width="1.6"
-											stroke-linecap="round"
-											stroke-linejoin="round"
-										/>
-									</svg>
-									<div>
-										<p class="event__success-title">Регистрацията е приета!</p>
-										<p class="event__success-sub">
-											{event.ticket
-												? event.ticketNote
-												: 'Ще получиш потвърждение на посочения имейл.'}
-										</p>
+					{#if event.webinars && openIndex === i}
+						<div class="event__webinars" transition:slide={{ duration: 320, easing: cubicOut }}>
+							{#each event.webinars as webinar}
+								<div class="webinar">
+									<div class="webinar__header">
+										<h3 class="webinar__title">{webinar.title}</h3>
+										<span class="webinar__date">{webinar.date}</span>
 									</div>
+									{#each webinar.paras as para}
+										<p class="webinar__p">{para}</p>
+									{/each}
+									<a
+										href={webinar.formUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										class="btn btn-outline webinar__btn"
+									>
+										За записване, попълнете формата
+									</a>
 								</div>
-							{:else}
-								<form class="event__form" onsubmit={(e) => handleRegister(e, i)}>
-									<div class="event__form-head">
-										<p class="event__form-label">Регистрация — {event.title}</p>
-										{#if event.ticket}
-											<p class="event__ticket-note">{event.ticketNote}</p>
-										{/if}
-									</div>
-
-									<div class="event__fields">
-										<div class="event__field">
-											<label for="ev-name-{i}">Име и фамилия *</label>
-											<input
-												id="ev-name-{i}"
-												type="text"
-												placeholder="Иван Иванов"
-												bind:value={formData[i].name}
-												oninput={() => clearError(i)}
-											/>
-										</div>
-										<div class="event__field">
-											<label for="ev-email-{i}">Имейл *</label>
-											<input
-												id="ev-email-{i}"
-												type="email"
-												placeholder="твоят@имейл.com"
-												bind:value={formData[i].email}
-												oninput={() => clearError(i)}
-											/>
-										</div>
-										<div class="event__field">
-											<label for="ev-phone-{i}">Телефон *</label>
-											<input
-												id="ev-phone-{i}"
-												type="tel"
-												placeholder="+359 888 123 456"
-												bind:value={formData[i].phone}
-												oninput={() => clearError(i)}
-											/>
-										</div>
-									</div>
-
-									<label class="event__agree">
-										<input
-											type="checkbox"
-											bind:checked={formData[i].agree}
-											onchange={() => clearError(i)}
-										/>
-										<span>Съгласявам се личните ми данни да бъдат обработени за целите на регистрацията.</span>
-									</label>
-
-									{#if formStatus[i] === 'error'}
-										<p class="event__error">{formError[i]}</p>
-									{/if}
-
-									<button
-										type="submit"
-										class="btn btn-primary"
-										disabled={formStatus[i] === 'loading'}
-									>
-										{formStatus[i] === 'loading' ? '...' : 'Изпрати регистрацията'}
-									</button>
-								</form>
-							{/if}
+							{/each}
 						</div>
 					{/if}
 				</div>
@@ -420,7 +311,6 @@
 		min-width: 0;
 	}
 
-	/* Event head row */
 	.event__head {
 		display: flex;
 		align-items: flex-start;
@@ -487,20 +377,6 @@
 		margin-bottom: 22px;
 	}
 
-	.event__free-badge {
-		display: inline-block;
-		font-size: 0.62rem;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: #fff;
-		background: var(--tertiary);
-		padding: 3px 11px;
-		border-radius: 100px;
-		vertical-align: middle;
-		margin-left: 12px;
-		margin-bottom: 2px;
-	}
-
 	.event__more-btn {
 		display: inline-flex;
 		align-items: center;
@@ -558,157 +434,70 @@
 		white-space: nowrap;
 	}
 
-	/* Form expand area */
-	.event__form-wrap {
+	/* WEBINARS EXPAND AREA */
+	.event__webinars {
 		overflow: hidden;
 		border-top: 1px solid var(--border);
 		background: #e8e3dc;
-	}
-
-	.event__success {
-		display: flex;
-		align-items: flex-start;
-		gap: 16px;
-		padding: 36px 56px;
-		color: var(--secondary);
-	}
-
-	.event__success svg {
-		flex-shrink: 0;
-		margin-top: 3px;
-	}
-
-	.event__success-title {
-		font-size: 0.95rem;
-		color: var(--text);
-		margin-bottom: 6px;
-		font-weight: 400;
-	}
-
-	.event__success-sub {
-		font-size: 0.85rem;
-		color: var(--text-muted);
-		line-height: 1.75;
-		max-width: 480px;
-	}
-
-	.event__form {
 		padding: 40px 56px 48px;
-	}
-
-	.event__form-head {
-		margin-bottom: 32px;
-	}
-
-	.event__form-label {
-		font-size: 0.68rem;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-		color: var(--secondary);
-		margin-bottom: 14px;
-	}
-
-	.event__ticket-note {
-		font-size: 0.85rem;
-		color: var(--text-muted);
-		line-height: 1.75;
-		max-width: 520px;
-		padding: 14px 20px;
-		border-left: 2px solid var(--secondary);
-		opacity: 0.85;
-	}
-
-	.event__fields {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 20px;
-		margin-bottom: 28px;
-	}
-
-	.event__field {
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: 0;
 	}
 
-	.event__field label {
-		font-size: 0.7rem;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--text-muted);
+	.webinar {
+		padding: 32px 0;
+		border-bottom: 1px solid rgba(113, 73, 85, 0.12);
 	}
 
-	.event__field input {
-		background: var(--bg);
-		border: 1px solid var(--border);
-		padding: 12px 16px;
-		font-family: var(--body-font);
-		font-size: 0.9rem;
-		color: var(--text);
-		outline: none;
-		transition: border-color 0.2s;
-		width: 100%;
+	.webinar:first-child {
+		padding-top: 0;
 	}
 
-	.event__field input:focus {
-		border-color: var(--secondary);
+	.webinar:last-child {
+		border-bottom: none;
+		padding-bottom: 0;
 	}
 
-	.event__field input::placeholder {
-		color: var(--text-muted);
-		opacity: 0.5;
-	}
-
-	.event__agree {
+	.webinar__header {
 		display: flex;
-		align-items: flex-start;
-		gap: 12px;
-		margin-bottom: 20px;
-		cursor: pointer;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 24px;
+		margin-bottom: 16px;
 	}
 
-	.event__agree input[type='checkbox'] {
-		appearance: none;
-		-webkit-appearance: none;
-		width: 18px;
-		height: 18px;
-		border: 1px solid var(--border);
-		background: var(--bg);
-		flex-shrink: 0;
-		margin-top: 1px;
-		cursor: pointer;
-		transition: background 0.18s, border-color 0.18s;
-		position: relative;
+	.webinar__title {
+		font-family: var(--heading-font);
+		font-size: 1.7rem;
+		font-weight: 400;
+		color: var(--text);
+		line-height: 1.2;
 	}
 
-	.event__agree input[type='checkbox']:checked {
-		background: var(--secondary);
-		border-color: var(--secondary);
-	}
-
-	.event__agree input[type='checkbox']:checked::after {
-		content: '';
-		position: absolute;
-		left: 4px;
-		top: 1px;
-		width: 6px;
-		height: 10px;
-		border: 1.5px solid #fff;
-		border-top: none;
-		border-left: none;
-		transform: rotate(45deg);
-	}
-
-	.event__agree span {
-		font-size: 0.82rem;
+	.webinar__date {
+		font-family: var(--heading-font);
+		font-size: 0.9rem;
+		font-style: italic;
 		color: var(--text-muted);
-		line-height: 1.65;
+		white-space: nowrap;
+		flex-shrink: 0;
 	}
 
-	.event__error {
-		font-size: 0.82rem;
-		color: #c0504a;
-		margin-bottom: 18px;
+	.webinar__p {
+		font-size: 0.9rem;
+		color: var(--text-muted);
+		line-height: 1.9;
+		max-width: 600px;
+		margin-bottom: 10px;
+	}
+
+	.webinar__p:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.webinar__btn {
+		margin-top: 22px;
 	}
 
 	/* CTA */
@@ -773,16 +562,13 @@
 			font-size: 2rem;
 		}
 
-		.event__form {
+		.event__webinars {
 			padding: 28px 28px 36px;
 		}
 
-		.event__success {
-			padding: 28px;
-		}
-
-		.event__fields {
-			grid-template-columns: 1fr 1fr;
+		.webinar__header {
+			flex-direction: column;
+			gap: 6px;
 		}
 
 		.cta-band h2 {
@@ -805,12 +591,8 @@
 			font-size: 1.8rem;
 		}
 
-		.event__form {
+		.event__webinars {
 			padding: 20px 20px 28px;
-		}
-
-		.event__fields {
-			grid-template-columns: 1fr;
 		}
 
 		.cta-band h2 {

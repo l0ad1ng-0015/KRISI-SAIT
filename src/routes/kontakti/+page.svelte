@@ -132,7 +132,7 @@
 		</a>
 		<div class="info__item">
 			<span class="info__label">Адрес</span>
-			<span class="info__value">гр. София, ул. Примерна 12</span>
+			<span class="info__value">гр. София, ул. Цар Шишман 27б</span>
 		</div>
 	</div>
 </section>
@@ -253,7 +253,7 @@
 <section class="map">
 	<iframe
 		title="Местоположение"
-		src="https://maps.google.com/maps?q=Sofia%2C%20Bulgaria&t=&z=13&ie=UTF8&iwloc=&output=embed"
+		src="https://maps.google.com/maps?q=%D1%83%D0%BB.+%D0%A6%D0%B0%D1%80+%D0%A8%D0%B8%D1%88%D0%BC%D0%B0%D0%BD+27%D0%B1%2C+%D0%A1%D0%BE%D1%84%D0%B8%D1%8F&t=&z=16&ie=UTF8&iwloc=&output=embed"
 		loading="lazy"
 		referrerpolicy="no-referrer-when-downgrade"
 	></iframe>

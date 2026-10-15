@@ -47,6 +47,7 @@
 		{ href: '/obucheniya', label: 'Обучения' },
 		{ href: '/sabitiya', label: 'Събития' },
 		{ href: '/za-kristina', label: 'За Кристина' },
+		{ href: '/publikacii', label: 'Публикации' },
 		{ href: '/kontakti', label: 'Контакти' }
 	];
 

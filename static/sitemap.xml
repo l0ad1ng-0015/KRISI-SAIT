@@ -32,6 +32,12 @@
   </url>
 
   <url>
+    <loc>https://kristinadoychinova.com/publikacii</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://kristinadoychinova.com/kontakti</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
