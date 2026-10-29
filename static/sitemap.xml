@@ -13,10 +13,11 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- obucheniya is hidden from nav — low priority until re-enabled -->
   <url>
     <loc>https://kristinadoychinova.com/obucheniya</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
   </url>
 
   <url>

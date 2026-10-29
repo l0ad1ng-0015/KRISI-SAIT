@@ -502,16 +502,15 @@
 	.approach__pillars {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		border-top: 1px solid var(--border);
+		gap: 24px;
+		margin-top: 16px;
 	}
 
 	.pillar {
 		padding: 48px 44px;
-		border-right: 1px solid var(--border);
-	}
-
-	.pillar:last-child {
-		border-right: none;
+		background: var(--card-bg);
+		border-radius: var(--radius);
+		border: 1px solid var(--border);
 	}
 
 	.pillar__num {
@@ -628,13 +627,7 @@
 		}
 
 		.pillar {
-			border-right: none;
-			border-bottom: 1px solid var(--border);
-			padding: 36px 0;
-		}
-
-		.pillar:last-child {
-			border-bottom: none;
+			padding: 36px 32px;
 		}
 	}
 

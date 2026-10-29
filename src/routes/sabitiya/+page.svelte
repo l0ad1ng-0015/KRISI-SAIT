@@ -281,22 +281,20 @@
 		max-width: 1060px;
 		display: flex;
 		flex-direction: column;
+		gap: 24px;
 	}
 
 	.event {
 		display: flex;
-		background: var(--bg);
+		background: var(--card-bg);
 		border: 1px solid var(--border);
-		border-top: none;
+		border-radius: var(--radius);
+		overflow: hidden;
 		transition: box-shadow 0.3s ease;
 	}
 
-	.event:first-child {
-		border-top: 1px solid var(--border);
-	}
-
 	.event--open {
-		box-shadow: 0 12px 48px rgba(92, 60, 70, 0.1);
+		box-shadow: 0 12px 48px rgba(77, 39, 39, 0.1);
 		z-index: 1;
 		position: relative;
 	}

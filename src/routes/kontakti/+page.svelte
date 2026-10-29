@@ -102,10 +102,10 @@
 </script>
 
 <svelte:head>
-	<title>Контакти — Запишете Сесия | Кристина Дойчинова</title>
-	<meta name="description" content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете индивидуална сесия или задайте въпрос чрез контактната форма." />
-	<meta property="og:title" content="Контакти — Запишете Сесия | Кристина Дойчинова" />
-	<meta property="og:description" content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете индивидуална сесия или задайте въпрос чрез контактната форма." />
+	<title>Контакти — Запишете Среща | Кристина Дойчинова</title>
+	<meta name="description" content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете среща или задайте въпрос чрез контактната форма." />
+	<meta property="og:title" content="Контакти — Запишете Среща | Кристина Дойчинова" />
+	<meta property="og:description" content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете среща или задайте въпрос чрез контактната форма." />
 	<meta property="og:url" content="https://kristinadoychinova.com/kontakti" />
 </svelte:head>
 
@@ -114,7 +114,7 @@
 	<div class="page-hero__inner container">
 		<h1>Свържи се с<br /><em>Кристина</em></h1>
 		<p class="page-hero__desc">
-			Имаш въпрос или искаш да запишеш сесия? Пиши — Кристина отговаря лично на всяко съобщение.
+			Имаш въпрос или искаш да запишеш среща? Пиши — Кристина отговаря лично на всяко съобщение.
 		</p>
 	</div>
 </section>
@@ -141,7 +141,7 @@
 <section class="form-section">
 	<div class="form-section__inner">
 		<p class="section-tag" style="text-align:center;">Контактна форма</p>
-		<h2 class="form-section__title">Запиши своята <em>сесия</em></h2>
+		<h2 class="form-section__title">Запиши своята <em>среща</em></h2>
 
 		{#if submitSuccess}
 			<div class="alert alert--success">
@@ -203,14 +203,14 @@
 					{#if errors.phone}<span class="form__error">{errors.phone}</span>{/if}
 				</div>
 				<div class="form__group">
-					<label for="sessionType">Тип сесия *</label>
+					<label for="sessionType">Тип среща *</label>
 					<select
 						id="sessionType"
 						bind:value={form.sessionType}
 						onchange={() => clearError('sessionType')}
 						class:input--error={errors.sessionType}
 					>
-						<option value="">Избери сесия</option>
+						<option value="">Избери тип среща</option>
 						<option value="Индивидуална среща — на живо">Индивидуална среща — на живо</option>
 						<option value="Индивидуална среща — онлайн">Индивидуална среща — онлайн</option>
 						<option value="Медитативна сесия">Медитативна сесия</option>
@@ -408,6 +408,7 @@
 		color: var(--text);
 		background: transparent;
 		border: 1px solid var(--border);
+		border-radius: 8px;
 		padding: 13px 16px;
 		outline: none;
 		transition: border-color 0.2s ease;

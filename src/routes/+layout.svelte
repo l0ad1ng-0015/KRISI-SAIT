@@ -44,7 +44,6 @@
 	const links = [
 		{ href: '/', label: 'Начало' },
 		{ href: '/lichni-sesii', label: 'Лични сесии' },
-		{ href: '/obucheniya', label: 'Обучения' },
 		{ href: '/sabitiya', label: 'Събития' },
 		{ href: '/za-kristina', label: 'За Кристина' },
 		{ href: '/publikacii', label: 'Публикации' },
@@ -109,6 +108,8 @@
 				>
 			{/each}
 		</nav>
+
+		<a href="/kontakti" class="nav__cta btn btn-primary">Запиши среща</a>
 
 		<button
 			class="nav__burger"
@@ -262,6 +263,13 @@
 
 	.nav__link--active {
 		color: var(--secondary);
+	}
+
+	/* Nav CTA button */
+	.nav__cta {
+		padding: 9px 22px;
+		font-size: 0.72rem;
+		flex-shrink: 0;
 	}
 
 	/* Hamburger */
@@ -464,6 +472,10 @@
 
 	/* ======= MOBILE ======= */
 	@media (max-width: 900px) {
+		.nav__cta {
+			display: none;
+		}
+
 		.nav__burger {
 			display: flex;
 		}

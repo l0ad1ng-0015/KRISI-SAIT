@@ -2,7 +2,7 @@
 	import { slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 
-	let openIndex = $state(0);
+	let openIndex = $state(null);
 
 	const toggle = (i) => {
 		openIndex = openIndex === i ? null : i;
@@ -112,7 +112,7 @@
 									<li>{point}</li>
 								{/each}
 							</ul>
-							<a href="/kontakti" class="btn btn-primary">Запиши своята сесия</a>
+							<a href="/kontakti" class="btn btn-primary">Запиши своята среща</a>
 						</div>
 					{/if}
 				</div>
@@ -207,8 +207,9 @@
 	.session {
 		display: grid;
 		grid-template-columns: 300px 1fr;
-		background: var(--bg);
+		background: var(--card-bg);
 		border: 1px solid var(--border);
+		border-radius: var(--radius);
 		overflow: hidden;
 		transition: box-shadow 0.35s ease;
 	}
