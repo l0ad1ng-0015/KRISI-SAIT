@@ -50,7 +50,9 @@
 		</div>
 	</div>
 	<div class="page-hero__visual" aria-hidden="true">
-		<div class="page-hero__img"></div>
+		<div class="page-hero__img">
+			<img src="/photos/za-kristina-hero.webp" alt="" fetchpriority="high" decoding="sync" />
+		</div>
 		<div class="page-hero__quote">
 			<span class="page-hero__quote-mark">"</span>
 			<p>Вярвам, че всеки носи в себе си силата за промяна.</p>
@@ -122,7 +124,9 @@
 			</button>
 		</div>
 		<div class="story__portrait" aria-hidden="true">
-			<div class="story__portrait-img"></div>
+			<div class="story__portrait-img">
+				<img src="/photos/kristina-portrait.webp" alt="Кристина Дойчинова" loading="lazy" />
+			</div>
 			<div class="story__portrait-caption">
 				<span class="story__caption-mark">"</span>
 				<p>Терапията е пространство за смелост.</p>
@@ -251,7 +255,14 @@
 	.page-hero__img {
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(160deg, #d8c8cb 0%, #c4a8b0 35%, #a88894 65%, #8e6a76 100%);
+		overflow: hidden;
+	}
+
+	.page-hero__img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
 	}
 
 	.page-hero__quote {
@@ -385,7 +396,17 @@
 	.story__portrait-img {
 		width: 100%;
 		aspect-ratio: 3 / 4;
-		background: linear-gradient(170deg, #cdb8bd 0%, #aa8893 50%, #8a6470 100%);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.story__portrait-img img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
 	}
 
 	.story__portrait-caption {

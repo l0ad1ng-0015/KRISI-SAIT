@@ -9,6 +9,8 @@
 	let scrolled = $state(false);
 	let mobileOpen = $state(false);
 
+	const isAdmin = $derived(page.url.pathname.startsWith('/admin'));
+
 	let subEmail = $state('');
 	let subStatus = $state(''); // '' | 'loading' | 'success' | 'error'
 	let subError = $state('');
@@ -94,6 +96,7 @@
 	{@html `<script type="application/ld+json">${ldJson}</script>`}
 </svelte:head>
 
+{#if !isAdmin}
 <header class="nav" class:nav--scrolled={scrolled}>
 	<div class="nav__inner container">
 		<a href="/" class="nav__logo">КД</a>
@@ -121,9 +124,11 @@
 		</button>
 	</div>
 </header>
+{/if}
 
 <main>{@render children()}</main>
 
+{#if !isAdmin}
 <footer class="footer">
 	<div class="footer__inner container">
 		<div class="footer__top">
@@ -192,6 +197,7 @@
 		</div>
 	</div>
 </footer>
+{/if}
 
 <style>
 	/* ======= NAVBAR ======= */

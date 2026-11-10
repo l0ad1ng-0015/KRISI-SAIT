@@ -40,7 +40,9 @@
 
 <!-- HERO -->
 <section class="hero">
-	<div class="hero__img" aria-hidden="true"></div>
+	<div class="hero__img" aria-hidden="true">
+		<img src="/photos/hero.webp" alt="" fetchpriority="high" decoding="sync" />
+	</div>
 	<div class="hero__content">
 		<div class="hero__text">
 			<p class="hero__tag section-tag">Ментор</p>
@@ -70,7 +72,9 @@
 <section class="services">
 	<div class="services__inner container">
 		<a href="/lichni-sesii" class="svc-card">
-			<div class="svc-card__img svc-card__img--sesii"></div>
+			<div class="svc-card__img">
+				<img src="/photos/lichni-sreshti.webp" alt="Лични срещи" loading="lazy" />
+			</div>
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">Лични срещи</h3>
 				<p class="svc-card__desc">
@@ -81,7 +85,9 @@
 			</div>
 		</a>
 		<a href="/sabitiya" class="svc-card">
-			<div class="svc-card__img svc-card__img--sabitiya"></div>
+			<div class="svc-card__img">
+				<img src="/photos/sabitiya.webp" alt="Групи и уъркшопи" loading="lazy" />
+			</div>
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">Групи & уъркшопи</h3>
 				<p class="svc-card__desc">
@@ -92,7 +98,9 @@
 			</div>
 		</a>
 		<a href="/za-kristina" class="svc-card" id="za-kristina">
-			<div class="svc-card__img svc-card__img--about"></div>
+			<div class="svc-card__img">
+				<img src="/photos/kristina-presenting.webp" alt="За Кристина" loading="lazy" />
+			</div>
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">За Кристина</h3>
 				<p class="svc-card__desc">
@@ -159,8 +167,14 @@
 	.hero__img {
 		position: absolute;
 		inset: 0;
-		/* Replace with: background-image: url('/photos/kristina.jpg'); background-size: cover; background-position: right center; */
-		background: linear-gradient(135deg, #e0d4d8 0%, #c8a8b2 28%, #a07888 58%, #6b4a57 100%);
+		overflow: hidden;
+	}
+
+	.hero__img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: right center;
 	}
 
 	.hero__content {
@@ -226,17 +240,17 @@
 		font-size: 6rem;
 		line-height: 0.7;
 		color: var(--secondary);
-		opacity: 0.35;
+		opacity: 0.5;
 		flex-shrink: 0;
 		margin-top: 8px;
 	}
 
 	.quote-section__text {
 		font-family: var(--heading-font);
-		font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+		font-size: clamp(1.5rem, 2.8vw, 2.1rem);
 		font-style: italic;
-		font-weight: 300;
-		color: var(--text-muted);
+		font-weight: 400;
+		color: var(--text);
 		line-height: 1.55;
 	}
 
@@ -272,16 +286,16 @@
 		width: 100%;
 		aspect-ratio: 3 / 2;
 		flex-shrink: 0;
+		position: relative;
+		overflow: hidden;
 	}
 
-	.svc-card__img--sesii {
-		background: linear-gradient(160deg, #d4bfc3 0%, #b8989f 50%, #9e7a84 100%);
-	}
-	.svc-card__img--sabitiya {
-		background: linear-gradient(160deg, #bcc8d8 0%, #9aabbc 50%, #7d90a8 100%);
-	}
-	.svc-card__img--about {
-		background: linear-gradient(160deg, #d0c0c4 0%, #b89098 50%, #a07880 100%);
+	.svc-card__img img {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	.svc-card__body {
@@ -301,9 +315,9 @@
 	}
 
 	.svc-card__desc {
-		font-size: 0.9rem;
-		color: var(--text-muted);
-		line-height: 1.85;
+		font-size: 0.97rem;
+		color: #6a5f5c;
+		line-height: 1.7;
 		flex: 1;
 	}
 
@@ -377,7 +391,7 @@
 		font-family: var(--heading-font);
 		font-size: 1.3rem;
 		font-style: italic;
-		color: var(--text-muted);
+		color: var(--text);
 	}
 
 	/* ======= ОТЗИВИ ======= */
@@ -407,14 +421,9 @@
 
 	.reviews-track {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 1.55fr 1fr;
+		grid-template-rows: auto auto;
 		gap: 24px;
-		overflow-x: auto;
-		scrollbar-width: none;
-	}
-
-	.reviews-track::-webkit-scrollbar {
-		display: none;
 	}
 
 	.review-card {
@@ -424,23 +433,38 @@
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-		min-width: 280px;
+	}
+
+	/* Dominant — first card spans both rows */
+	.review-card:first-child {
+		grid-row: 1 / 3;
+		padding: 52px 48px 56px;
+	}
+
+	.review-card:first-child .review-card__mark {
+		font-size: 5rem;
+		opacity: 0.45;
+	}
+
+	.review-card:first-child .review-card__text {
+		font-size: clamp(1.3rem, 2vw, 1.65rem);
+		line-height: 1.65;
 	}
 
 	.review-card__mark {
 		font-family: var(--heading-font);
-		font-size: 3.5rem;
+		font-size: 3rem;
 		line-height: 0.6;
 		color: var(--secondary);
-		opacity: 0.3;
+		opacity: 0.25;
 	}
 
 	.review-card__text {
 		font-family: var(--heading-font);
-		font-size: 1.15rem;
+		font-size: 1.05rem;
 		font-style: italic;
 		color: var(--text);
-		line-height: 1.6;
+		line-height: 1.65;
 		flex: 1;
 	}
 
@@ -520,7 +544,12 @@
 		}
 
 		.reviews-track {
-			grid-template-columns: repeat(3, minmax(260px, 1fr));
+			grid-template-columns: 1fr;
+		}
+
+		.review-card:first-child {
+			grid-row: auto;
+			padding: 40px 32px 44px;
 		}
 	}
 

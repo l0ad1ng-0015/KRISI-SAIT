@@ -78,7 +78,9 @@
 		{#each sessions as session, i}
 			<article class="session" class:session--open={openIndex === i}>
 				<div class="session__media">
-					<div class="session__img" style="background: {session.gradient};"></div>
+					<div class="session__img">
+					<img src="/photos/{i === 0 ? 'lichni-sreshti' : 'meditacia'}.webp" alt="" loading="lazy" />
+				</div>
 					<span class="session__num">0{i + 1}</span>
 				</div>
 
@@ -230,6 +232,14 @@
 		width: 100%;
 		height: 100%;
 		transition: transform 0.6s ease;
+		overflow: hidden;
+	}
+
+	.session__img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
 	}
 
 	.session:hover .session__img {
