@@ -28,12 +28,17 @@
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-	<div class="page-hero__inner container">
-		<h1>Публи<em>кации</em></h1>
-		<div class="page-hero__divider" aria-hidden="true"></div>
-		<p class="page-hero__desc">
-			Размисли, наблюдения и знание — споделено в писмена форма.
-		</p>
+	<div class="page-hero__bg" aria-hidden="true">
+		<img src="/photos/kristina-portrait.webp" alt="" fetchpriority="high" />
+	</div>
+	<div class="page-hero__overlay">
+		<div class="page-hero__inner container">
+			<h1>Спо<em>деляне</em></h1>
+			<div class="page-hero__divider" aria-hidden="true"></div>
+			<p class="page-hero__desc">
+				Размисли, наблюдения и знание — споделено в писмена форма.
+			</p>
+		</div>
 	</div>
 </section>
 
@@ -65,16 +70,39 @@
 <style>
 	/* PAGE HERO */
 	.page-hero {
-		padding: calc(var(--nav-h) + 80px) 0 90px;
-		text-align: center;
+		position: relative;
+		min-height: 55vh;
+		overflow: hidden;
 		border-bottom: 1px solid var(--border);
+	}
+
+	.page-hero__bg {
+		position: absolute;
+		inset: 0;
+	}
+
+	.page-hero__bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	.page-hero__overlay {
+		position: relative;
+		z-index: 1;
+		min-height: 55vh;
+		display: flex;
+		align-items: center;
+		background: linear-gradient(to right, rgba(237, 234, 229, 0.96) 0%, rgba(237, 234, 229, 0.88) 38%, rgba(237, 234, 229, 0.5) 65%, transparent 85%);
 	}
 
 	.page-hero__inner {
 		max-width: 760px;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
+		padding: calc(var(--nav-h) + 60px) 80px 80px;
 	}
 
 	.page-hero h1 {

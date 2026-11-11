@@ -1,4 +1,4 @@
-import { ADMIN_PASSWORD, ADMIN_SECRET } from '$env/static/private';
+import { ADMIN_PASSWORD, ADMIN_SECRET } from '$env/dynamic/private';
 
 const COOKIE = 'admin_session';
 const MAX_AGE = 60 * 60 * 8; // 8 hours

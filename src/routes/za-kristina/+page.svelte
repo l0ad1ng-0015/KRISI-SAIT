@@ -3,59 +3,40 @@
 	import { cubicOut } from 'svelte/easing';
 
 	let expanded = $state(false);
-
-	const pillars = [
-		{
-			title: 'Всичко в теб е наред',
-			desc: 'Твоята същност е по-голяма от историите, които си научил за себе си'
-		},
-		{
-			title: 'Мирът е твоята природа',
-			desc: 'Да бъдеш свързан със себе си, докато преживяваш живота такъв, какъвто идва'
-		},
-		{
-			title: 'Автентичността е свобода',
-			desc: 'Да живееш в съгласие със себе си и с онова, което истински има значение за теб'
-		}
-	];
 </script>
 
 <svelte:head>
 	<title>За Кристина Дойчинова — Ментор в Себепознанието</title>
 	<meta
 		name="description"
-		content="Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Повече от 20 години работа с хора. Свободата започва със себепознанието."
+		content="Кристина Дойчинова — ментор психо-емоционални динамики и себепознание. Близо 20 години работа с хора. Свободата започва със себепознанието."
 	/>
 	<meta property="og:title" content="За Кристина Дойчинова — Ментор в Себепознанието" />
 	<meta
 		property="og:description"
-		content="Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Повече от 20 години работа с хора. Свободата започва със себепознанието."
+		content="Кристина Дойчинова — ментор психо-емоционални динамики и себепознание. Близо 20 години работа с хора. Свободата започва със себепознанието."
 	/>
 	<meta property="og:url" content="https://kristinadoychinova.com/za-kristina" />
 </svelte:head>
 
 <!-- HERO -->
 <section class="page-hero">
-	<div class="page-hero__text">
-		<h1>За<br /><em>Кристина</em></h1>
-		<p class="page-hero__desc">
-			Ментор в себепознанието, обучител и фасилитатор с над 20 години опит в работата с хора.
-		</p>
-		<div class="page-hero__meta">
-			<span>Ментор</span>
-			<span class="page-hero__dot"></span>
-			<span>Обучител</span>
-			<span class="page-hero__dot"></span>
-			<span>Фасилитатор</span>
-		</div>
+	<div class="page-hero__bg" aria-hidden="true">
+		<img src="/photos/za-kristina-hero.webp" alt="" fetchpriority="high" decoding="sync" />
 	</div>
-	<div class="page-hero__visual" aria-hidden="true">
-		<div class="page-hero__img">
-			<img src="/photos/za-kristina-hero.webp" alt="" fetchpriority="high" decoding="sync" />
-		</div>
-		<div class="page-hero__quote">
-			<span class="page-hero__quote-mark">"</span>
-			<p>Вярвам, че всеки носи в себе си силата за промяна.</p>
+	<div class="page-hero__overlay">
+		<div class="page-hero__text">
+			<div class="page-hero__meta">
+				<span>Ментор</span>
+				<span class="page-hero__dot"></span>
+				<span>Лектор</span>
+				<span class="page-hero__dot"></span>
+				<span>Автор</span>
+			</div>
+			<h1>За<br /><em>Кристина</em></h1>
+			<p class="page-hero__desc">
+				Ментор психо-емоционални динамики и себепознание
+			</p>
 		</div>
 	</div>
 </section>
@@ -65,40 +46,33 @@
 	<div class="story__inner container">
 		<div class="story__content">
 			<span class="section-tag">История</span>
-			<h2 class="story__heading">Моят<br /><em>път</em></h2>
+			<h2 class="story__heading">Професионалният<br /><em>ми път</em></h2>
 			<blockquote class="story__pull">
-				Повече от 20 години изследвам човешката психика, а над 17 от тях прекарах в
-				психотерапевтичния кабинет.
+				Близо 20 години практика като психотерапевт и преподавател по хипноза и
+				психотерапевтични техники.
 			</blockquote>
 			<p class="story__lead-p">
-				Пътят ми премина през психологията, хипнозата, работата с тялото, коучинга, различни
-				терапевтични и духовни системи. Създадох свои методи, преподавах и работих с хиляди хора и
-				ученици.
+				Академичното ми образование е магистър — клиничен психолог. След него имам десетки
+				курсове и обучения за работа с човешката психика – когнитивни, поведенчески, соматични,
+				лингвистични, трансперсонални и пр. Имам богата и многолика професионална история, като
+				водещ и фасилитатор на множество терапевтични формата – групови и индивидуални. Автор
+				съм на няколко модела и обучения за психологична работа. Основател съм на Център
+				InnerSelf и председател на „Институт за холистична терапия и иновативна психология". За
+				всички тях подробно може да прочетете на
+				<a href="https://innerself.bg" target="_blank" rel="noopener">innerself.bg</a>.
 			</p>
-			<p class="story__p">И точно този опит ме отведе отвъд методите.</p>
 
 			{#if expanded}
 				<div transition:slide={{ duration: 360, easing: cubicOut }}>
 					<p class="story__p">
-						Разбрах, че нищо в нас не се нуждае от поправка, а от свобода. Че не самите ситуации ни
-						определят, а значенията, които сме се научили да им придаваме. Ограничени сме от това,
-						което сме повярвали за себе си и възможностите си, от онова което сме научили.
-					</p>
-					<p class="story__p">
-						Несъзнателното ни поле е изпълнено с истории, убеждения, емоционални модели, стратегии,
-						които някога са ни били нужни, но днес често се превръщат в най-големите пречки.
-					</p>
-					<p class="story__p">
-						Днес работата ми е да помагам на човек да разпознае тези невидими конструкции, да разбере
-						динамиките, които са ги формирали и излезе отвъд тях. Да се приближи до онова, което
-						винаги е било в сърцевината на моята работа — дълбокото свързване със себе си, с живота и
-						с любовта.
+						Но вярвам, че по-важната част е да се срещнете с мен като човек. Обичам изкуството,
+						гората, движението. Имам доста хобита. Харесвам живота и нещата в него, дори когато
+						не ги разбирам напълно. Изследовател съм. Обичам да пиша, харесвам смеха.
 					</p>
 					<p class="story__p story__p--emphasis">
-						Затова днес определям себе си като ментор в себепознанието и психо-емоционалните
-						динамики.<br />
-						Не защото съм оставила терапията зад себе си.<br />
-						А защото пътят ми ме отведе отвъд нея.
+						Вярвам, че да се научим как да живеем щастливо е път и този път е уникален — всеки
+						от нас има капацитета да го извърви.<br />
+						Не съм изоставила психотерапията, просто пътят ме отведе отвъд нея.
 					</p>
 				</div>
 			{/if}
@@ -129,54 +103,49 @@
 			</div>
 			<div class="story__portrait-caption">
 				<span class="story__caption-mark">"</span>
-				<p>Терапията е пространство за смелост.</p>
+				<p>Дори най-безумното действие е породено от желанието да се свържем с любовта.</p>
 			</div>
 		</div>
 	</div>
 </section>
 
-<!-- ПОДХОД -->
-<section class="approach">
-	<div class="approach__inner container">
-		<header class="approach__header">
+<!-- РАБОТАТА МИ СЕГА -->
+<section class="work">
+	<div class="work__inner container">
+		<header class="work__header">
 			<span class="section-tag">Подходът</span>
-			<h2><em>Свободата</em> започва<br />със себепознанието!</h2>
-			<p class="approach__intro">
-				Като ментор помагам на хората да осъзнаят и предефинират менталните матрици, които
-				ограничават благополучието и удовлетворението от живота им.
-			</p>
+			<h2>Работата<br /><em>ми сега</em></h2>
 		</header>
 
-		<div class="approach__body">
-			<p class="approach__lead">Независимо дали се стремите към:</p>
-			<ul class="approach__list">
-				<li>По-добри взаимоотношения със себе си, другите и света</li>
-				<li>Повече усещане за вътрешен мир — намаляване на стреса и тревожността</li>
-				<li>Повече яснота за самите вас и вашите ситуации — вашите чувства и поведения</li>
-				<li>
-					По-добро разбиране и свързване с емоционалния ви свят — връзка с невидимата ви навигационна
-					система
-				</li>
-				<li>Или повече чувство на свобода и автентичност</li>
-			</ul>
-			<p class="approach__note">Личните сесии ще ви отведат към точната посока.</p>
-			<p class="approach__p">
-				Като ментор помагам на хората да разпознаят онова, което ги отдалечава от собствената им
-				природа. Да разберат объркването, емоциите и моделите, които повтарят. Да научат онова, което
-				някога не са имали възможност да научат. И да открият повече свобода в начина, по който
-				мислят, чувстват, избират и живеят, за да достигнат благополучието и изобилието, което желаят
-				в своя живот.
+		<div class="work__body">
+			<p class="work__lead">
+				След дългогодишна практика като психотерапевт и преподавател по психология и хипноза,
+				днес посвещавам работата си на задълбоченото разбиране на човешкия вътрешен свят,
+				себепознанието и пътя към вътрешна свобода и автентичност като ментор психо-емоционални
+				динамики.
 			</p>
-		</div>
+			<p class="work__p">
+				Когато осъзнаем, че човешкият живот е едно голямо учебно поле, започваме да разбираме,
+				че играта има правила. Моята работа е да разберем какви са твоите правила, за да се
+				движиш с лекота в личното ти игрално поле.
+			</p>
 
-		<div class="approach__pillars">
-			{#each pillars as pillar, i}
-				<div class="pillar">
-					<span class="pillar__num">0{i + 1}</span>
-					<h3 class="pillar__title">{pillar.title}</h3>
-					<p class="pillar__desc">{pillar.desc}</p>
-				</div>
-			{/each}
+			<p class="work__list-label">Независимо дали се стремиш към:</p>
+			<ul class="work__list">
+				<li>По-добри взаимоотношения</li>
+				<li>По-здравословни връзки</li>
+				<li>Намаляване на стреса и тревожността</li>
+				<li>Яснота в собствената ти ситуация, чувства и поведения</li>
+				<li>Разбиране и свързване с емоциите</li>
+				<li>Радост, спонтанност и чувство на свобода и автентичност</li>
+				<li>Удовлетворение, лекота и разблокиране на креативността</li>
+			</ul>
+
+			<p class="work__closing">
+				В основата стои възстановяването на взаимоотношенията с теб, от които зависи всичко
+				друго. Моята работа като ментор е да намерим уникалния път към твоята съкровена същност,
+				която търси свобода и разгръщане.
+			</p>
 		</div>
 	</div>
 </section>
@@ -193,27 +162,52 @@
 <style>
 	/* ── PAGE HERO ── */
 	.page-hero {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		align-items: stretch;
+		position: relative;
+		min-height: 65vh;
+		overflow: hidden;
 		border-bottom: 1px solid var(--border);
-		min-height: 62vh;
+	}
+
+	.page-hero__bg {
+		position: absolute;
+		inset: 0;
+	}
+
+	.page-hero__bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	.page-hero__overlay {
+		position: relative;
+		z-index: 1;
+		min-height: 65vh;
+		display: flex;
+		align-items: center;
+		background: linear-gradient(
+			to right,
+			rgba(237, 234, 229, 0.97) 0%,
+			rgba(237, 234, 229, 0.9) 35%,
+			rgba(237, 234, 229, 0.55) 60%,
+			transparent 82%
+		);
 	}
 
 	.page-hero__text {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		padding: calc(var(--nav-h) + 40px) 72px 72px 80px;
-		max-width: 680px;
-		justify-self: end;
-		width: 100%;
+		padding: calc(var(--nav-h) + 60px) 80px 80px;
+		max-width: 580px;
 	}
 
 	.page-hero h1 {
-		font-size: clamp(3rem, 6vw, 5.5rem);
+		font-size: clamp(3.4rem, 7vw, 6rem);
 		line-height: 1.08;
-		margin-bottom: 24px;
+		margin-bottom: 20px;
+		margin-top: 20px;
 	}
 
 	.page-hero h1 em {
@@ -222,11 +216,12 @@
 	}
 
 	.page-hero__desc {
-		font-size: 1rem;
+		font-family: var(--heading-font);
+		font-size: clamp(1rem, 1.8vw, 1.3rem);
+		font-style: italic;
 		color: var(--text-muted);
-		line-height: 1.85;
-		max-width: 480px;
-		margin-bottom: 36px;
+		line-height: 1.7;
+		max-width: 440px;
 	}
 
 	.page-hero__meta {
@@ -247,57 +242,9 @@
 		opacity: 0.45;
 	}
 
-	.page-hero__visual {
-		position: relative;
-		overflow: hidden;
-	}
-
-	.page-hero__img {
-		position: absolute;
-		inset: 0;
-		overflow: hidden;
-	}
-
-	.page-hero__img img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
-	}
-
-	.page-hero__quote {
-		position: absolute;
-		left: 48px;
-		bottom: 48px;
-		right: 48px;
-		max-width: 360px;
-		background: rgba(237, 234, 229, 0.92);
-		backdrop-filter: blur(2px);
-		padding: 28px 32px 30px;
-		display: flex;
-		flex-direction: column;
-		gap: 6px;
-	}
-
-	.page-hero__quote-mark {
-		font-family: var(--heading-font);
-		font-size: 3rem;
-		line-height: 0.6;
-		color: var(--secondary);
-		opacity: 0.4;
-	}
-
-	.page-hero__quote p {
-		font-family: var(--heading-font);
-		font-size: 1.25rem;
-		font-style: italic;
-		line-height: 1.4;
-		color: var(--text);
-	}
-
 	/* ── STORY ── */
 	.story {
-		padding: var(--section-v) 0;
+		padding: var(--section-v) 0 calc(var(--section-v) * 0.6);
 	}
 
 	.story__inner {
@@ -340,6 +287,12 @@
 		line-height: 1.95;
 		margin-bottom: 22px;
 		max-width: 580px;
+	}
+
+	.story__lead-p a {
+		color: var(--secondary);
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 
 	.story__p {
@@ -433,73 +386,80 @@
 		line-height: 1.45;
 	}
 
-	/* ── APPROACH ── */
-	.approach {
-		padding: var(--section-v) 0;
+	/* ── РАБОТАТА МИ СЕГА ── */
+	.work {
+		padding: calc(var(--section-v) * 0.7) 0 var(--section-v);
+		background: var(--card-bg);
+		border-top: 1px solid var(--border);
 	}
 
-	.approach__inner {
-		max-width: 1060px;
+	.work__inner {
+		max-width: 820px;
 	}
 
-	.approach__header {
-		text-align: center;
-		max-width: 580px;
-		margin: 0 auto 72px;
+	.work__header {
+		margin-bottom: 52px;
 	}
 
-	.approach__header h2 {
+	.work__header h2 {
 		font-size: clamp(2.4rem, 4vw, 3.6rem);
 		line-height: 1.08;
 		margin-top: 14px;
-		margin-bottom: 18px;
 	}
 
-	.approach__header h2 em {
+	.work__header h2 em {
 		color: var(--secondary);
 		font-style: italic;
 	}
 
-	.approach__intro {
-		font-size: 0.95rem;
-		color: var(--text-muted);
-		line-height: 1.85;
+	.work__body {
+		max-width: 700px;
 	}
 
-	.approach__body {
-		max-width: 680px;
-		margin: 0 auto 72px;
-	}
-
-	.approach__lead {
-		font-size: 0.95rem;
+	.work__lead {
+		font-size: clamp(1rem, 1.6vw, 1.15rem);
 		color: var(--text);
-		font-weight: 500;
-		margin-bottom: 18px;
+		line-height: 1.9;
+		margin-bottom: 26px;
 	}
 
-	.approach__list {
+	.work__p {
+		font-size: clamp(1rem, 1.6vw, 1.1rem);
+		color: var(--text-muted);
+		line-height: 1.95;
+		margin-bottom: 32px;
+	}
+
+	.work__list-label {
+		font-size: 1rem;
+		color: var(--text);
+		font-style: italic;
+		font-family: var(--heading-font);
+		margin-bottom: 16px;
+	}
+
+	.work__list {
 		list-style: none;
 		padding: 0;
-		margin: 0 0 28px;
+		margin: 0 0 32px;
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
+		gap: 10px;
 	}
 
-	.approach__list li {
-		font-size: 0.92rem;
+	.work__list li {
+		font-size: 1rem;
 		color: var(--text-muted);
 		line-height: 1.7;
-		padding-left: 22px;
+		padding-left: 24px;
 		position: relative;
 	}
 
-	.approach__list li::before {
+	.work__list li::before {
 		content: '';
 		position: absolute;
 		left: 0;
-		top: 10px;
+		top: 11px;
 		width: 6px;
 		height: 6px;
 		border-radius: 50%;
@@ -507,57 +467,14 @@
 		opacity: 0.5;
 	}
 
-	.approach__note {
-		font-size: 0.92rem;
-		color: var(--secondary);
-		font-style: italic;
-		margin-bottom: 32px;
-	}
-
-	.approach__p {
-		font-size: 0.92rem;
-		color: var(--text-muted);
-		line-height: 1.95;
-	}
-
-	.approach__pillars {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 24px;
-		margin-top: 16px;
-	}
-
-	.pillar {
-		padding: 48px 44px;
-		background: var(--card-bg);
-		border-radius: var(--radius);
-		border: 1px solid var(--border);
-	}
-
-	.pillar__num {
-		font-family: var(--heading-font);
-		font-size: 4rem;
-		font-style: italic;
-		color: var(--secondary);
-		opacity: 0.18;
-		display: block;
-		line-height: 1;
-		margin-bottom: 20px;
-	}
-
-	.pillar__title {
-		font-family: var(--heading-font);
-		font-size: 1.8rem;
-		font-weight: 400;
+	.work__closing {
+		font-size: clamp(1rem, 1.6vw, 1.1rem);
 		color: var(--text);
-		margin-bottom: 14px;
-		line-height: 1.15;
-	}
-
-	.pillar__desc {
-		font-size: 0.9rem;
-		color: var(--text-muted);
 		line-height: 1.9;
+		font-family: var(--heading-font);
+		font-style: italic;
+		border-left: 2px solid var(--secondary);
+		padding-left: 24px;
 	}
 
 	/* ── CTA ── */
@@ -586,13 +503,6 @@
 		font-style: italic;
 	}
 
-	.cta-band p {
-		font-size: 0.95rem;
-		color: var(--text-muted);
-		max-width: 400px;
-		line-height: 1.8;
-	}
-
 	/* ── RESPONSIVE ── */
 	@media (max-width: 1024px) {
 		.story__inner {
@@ -602,33 +512,18 @@
 	}
 
 	@media (max-width: 900px) {
-		.page-hero {
-			grid-template-columns: 1fr;
-			min-height: 0;
+		.page-hero__overlay {
+			background: linear-gradient(
+				to bottom,
+				rgba(237, 234, 229, 0.97) 0%,
+				rgba(237, 234, 229, 0.88) 60%,
+				rgba(237, 234, 229, 0.7) 100%
+			);
 		}
 
 		.page-hero__text {
-			padding: calc(var(--nav-h) + 32px) 24px 48px;
+			padding: calc(var(--nav-h) + 40px) 24px 60px;
 			max-width: 100%;
-			justify-self: stretch;
-			order: 1;
-		}
-
-		.page-hero__visual {
-			order: 0;
-			min-height: 56vw;
-			height: 56vw;
-		}
-
-		.page-hero__quote {
-			left: 24px;
-			right: 24px;
-			bottom: 24px;
-			padding: 20px 24px 22px;
-		}
-
-		.page-hero__quote p {
-			font-size: 1.1rem;
 		}
 	}
 
@@ -641,14 +536,6 @@
 		.story__portrait {
 			position: static;
 			max-width: 400px;
-		}
-
-		.approach__pillars {
-			grid-template-columns: 1fr;
-		}
-
-		.pillar {
-			padding: 36px 32px;
 		}
 	}
 

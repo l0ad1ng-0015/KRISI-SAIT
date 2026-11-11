@@ -1,4 +1,4 @@
-<script>
+﻿<script>
 	// Reviews — replace with real testimonials when available
 	const reviews = [
 		{
@@ -78,8 +78,7 @@
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">Лични срещи</h3>
 				<p class="svc-card__desc">
-					Индивидуална среща на живо или онлайн — пространство само за теб, за да изследваш онова,
-					което те вълнува.
+					Всяко човешко същество има способността да създава своята опитност по безброй начини. Ще ти помогна да откриеш твоите.
 				</p>
 				<span class="svc-card__link">Научи повече →</span>
 			</div>
@@ -91,8 +90,7 @@
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">Групи & уъркшопи</h3>
 				<p class="svc-card__desc">
-					Групови срещи, беседи и онлайн уебинари — присъедини се към общност от хора по пътя на
-					себепознанието.
+					Споделено пространство за учене и откриване на личния път към щастие и вътрешен мир.
 				</p>
 				<span class="svc-card__link">Виж събитията →</span>
 			</div>
@@ -104,8 +102,7 @@
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">За Кристина</h3>
 				<p class="svc-card__desc">
-					Ментор в себепознанието с над 20 години опит — Кристина помага на хората да открият повече
-					свобода и вътрешен мир.
+					Моята работа е да разбереш собствените си модели и вътрешни динамики, така че да намериш свобода.
 				</p>
 				<span class="svc-card__link">Прочети повече →</span>
 			</div>
@@ -125,7 +122,7 @@
 		</div>
 		<div class="blog-section__empty">
 			<p>Скоро тук ще намериш статии и размисли от Кристина.</p>
-			<a href="/publikacii" class="btn btn-outline">Публикации</a>
+			<a href="/publikacii" class="btn btn-outline">Споделяне</a>
 		</div>
 	</div>
 </section>
@@ -135,7 +132,7 @@
 	<div class="reviews-section__inner container">
 		<div class="reviews-section__header">
 			<p class="section-tag">Отзиви</p>
-			<h2>Какво казват<br /><em>другите</em></h2>
+			<h2>Какво казват другите<br /><em>за работата с Кристина</em></h2>
 		</div>
 		<div class="reviews-track" bind:this={reviewsEl}>
 			{#each reviews as r}
