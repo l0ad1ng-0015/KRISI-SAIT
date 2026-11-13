@@ -26,13 +26,10 @@
 		}
 	];
 
-	let reviewsEl = $state(null);
-
-	function scrollReviews() {
-		if (reviewsEl) {
-			reviewsEl.scrollBy({ left: 360, behavior: 'smooth' });
-		}
-	}
+	let reviewPage = $state(0);
+	const perPage = 3;
+	const totalPages = $derived(Math.ceil(reviews.length / perPage));
+	const visibleReviews = $derived(reviews.slice(reviewPage * perPage, reviewPage * perPage + perPage));
 </script>
 
 <svelte:head>
@@ -145,8 +142,8 @@
 			<p class="section-tag">Отзиви</p>
 			<h2>Какво казват другите<br /><em>за срещата си с Кристина</em></h2>
 		</div>
-		<div class="reviews-track" bind:this={reviewsEl}>
-			{#each reviews as r}
+		<div class="reviews-track">
+			{#each visibleReviews as r}
 				<div class="review-card">
 					<span class="review-card__mark">"</span>
 					<p class="review-card__text">{r.text}</p>
@@ -155,11 +152,38 @@
 			{/each}
 		</div>
 		<div class="reviews-section__footer">
-			<button class="reviews-arrow" onclick={scrollReviews} aria-label="Следващ отзив">
-				<svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-					<path d="M4.5 11h13M12 5l5.5 6L12 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-			</button>
+			<div class="reviews-dots">
+				{#each Array(totalPages) as _, i}
+					<button
+						class="reviews-dot"
+						class:reviews-dot--active={i === reviewPage}
+						onclick={() => (reviewPage = i)}
+						aria-label="Страница {i + 1}"
+					></button>
+				{/each}
+			</div>
+			<div class="reviews-arrows">
+				<button
+					class="reviews-arrow"
+					onclick={() => reviewPage--}
+					disabled={reviewPage === 0}
+					aria-label="Предишни отзиви"
+				>
+					<svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+						<path d="M17.5 11h-13M10 5L4.5 11 10 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+				<button
+					class="reviews-arrow"
+					onclick={() => reviewPage++}
+					disabled={reviewPage === totalPages - 1}
+					aria-label="Следващи отзиви"
+				>
+					<svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+						<path d="M4.5 11h13M12 5l5.5 6L12 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</button>
+			</div>
 		</div>
 	</div>
 </section>
@@ -486,12 +510,41 @@
 	.reviews-section__footer {
 		margin-top: 36px;
 		display: flex;
-		justify-content: flex-end;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.reviews-dots {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+	}
+
+	.reviews-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		border: 1px solid var(--secondary);
+		background: transparent;
+		cursor: pointer;
+		padding: 0;
+		transition: background 0.22s ease;
+		opacity: 0.4;
+	}
+
+	.reviews-dot--active {
+		background: var(--secondary);
+		opacity: 1;
+	}
+
+	.reviews-arrows {
+		display: flex;
+		gap: 10px;
 	}
 
 	.reviews-arrow {
-		width: 52px;
-		height: 52px;
+		width: 48px;
+		height: 48px;
 		border-radius: 50%;
 		border: 1px solid var(--border);
 		background: transparent;
@@ -500,12 +553,17 @@
 		justify-content: center;
 		cursor: pointer;
 		color: var(--secondary);
-		transition: background 0.25s ease, color 0.25s ease;
+		transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease;
 	}
 
-	.reviews-arrow:hover {
+	.reviews-arrow:hover:not(:disabled) {
 		background: var(--secondary);
 		color: #fff;
+	}
+
+	.reviews-arrow:disabled {
+		opacity: 0.25;
+		cursor: default;
 	}
 
 	/* ======= RESPONSIVE ======= */
