@@ -88,13 +88,13 @@
 	<div class="page-hero__inner container">
 		<h1>Предстоящи<br /><em>събития</em></h1>
 		<div class="page-hero__divider" aria-hidden="true"></div>
-		<p class="page-hero__quote">"Заедно се учим, вдъхновяваме и израстваме."</p>
+		<p class="page-hero__quote">„Несъзнаваното има и иска да сподели толкова много. Жадува да бъде чуто и отразено."</p>
 		<div class="page-hero__meta">
-			<span>03 формата</span>
+			<span>Преживяване</span>
 			<span class="page-hero__dot"></span>
-			<span>Онлайн & присъствено</span>
+			<span>Свързване</span>
 			<span class="page-hero__dot"></span>
-			<span>Предварителна регистрация</span>
+			<span>Вдъхновение</span>
 		</div>
 	</div>
 </section>

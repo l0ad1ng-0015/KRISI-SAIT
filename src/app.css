@@ -116,6 +116,7 @@ video {
 	cursor: pointer;
 	transition: all 0.28s ease;
 	border: none;
+	border-radius: 6px;
 }
 
 .btn-primary {

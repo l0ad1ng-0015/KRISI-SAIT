@@ -23,7 +23,7 @@
 		property="og:description"
 		content="Статии и публикации от Кристина Дойчинова — ментор в себепознанието. Размисли за вътрешния мир, автентичността и психо-емоционалните динамики."
 	/>
-	<meta property="og:url" content="https://kristinadoychinova.com/publikacii" />
+	<meta property="og:url" content="https://kristinadoychinova.com/spodeliane" />
 </svelte:head>
 
 <!-- PAGE HERO -->
@@ -36,7 +36,7 @@
 			<h1>Спо<em>деляне</em></h1>
 			<div class="page-hero__divider" aria-hidden="true"></div>
 			<p class="page-hero__desc">
-				Размисли, наблюдения и знание — споделено в писмена форма.
+				„На нас не ни липсват нито желание, нито способности да разрешим своята ситуация. Нужна ни е яснота и прозрение."
 			</p>
 		</div>
 	</div>

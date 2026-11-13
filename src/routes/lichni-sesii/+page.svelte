@@ -58,11 +58,11 @@
 		<div class="page-hero__divider" aria-hidden="true"></div>
 		<p class="page-hero__quote">„Време да възстановиш взаимоотношенията и връзката със себе си"</p>
 		<div class="page-hero__meta">
-			<span>02 формата</span>
+			<span>Яснота</span>
 			<span class="page-hero__dot"></span>
-			<span>50 мин</span>
+			<span>Свобода</span>
 			<span class="page-hero__dot"></span>
-			<span>Поверително</span>
+			<span>Автентичност</span>
 		</div>
 	</div>
 </section>
