@@ -99,7 +99,7 @@
 		</div>
 		<div class="story__portrait" aria-hidden="true">
 			<div class="story__portrait-img">
-				<img src="/photos/kristina-portrait.webp" alt="Кристина Дойчинова" loading="lazy" />
+				<img src="/photos/kristina-yellow-blouse.webp" alt="Кристина Дойчинова" loading="lazy" />
 			</div>
 			<div class="story__portrait-caption">
 				<span class="story__caption-mark">"</span>
@@ -249,7 +249,7 @@
 
 	.story__inner {
 		display: grid;
-		grid-template-columns: 1fr 360px;
+		grid-template-columns: 1fr 280px;
 		gap: 0 80px;
 		align-items: start;
 	}
@@ -351,6 +351,7 @@
 		aspect-ratio: 3 / 4;
 		position: relative;
 		overflow: hidden;
+		border-radius: var(--radius) var(--radius) 0 0;
 	}
 
 	.story__portrait-img img {
@@ -442,16 +443,16 @@
 		list-style: none;
 		padding: 0;
 		margin: 0 0 32px;
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 8px 32px;
 	}
 
 	.work__list li {
-		font-size: 1rem;
+		font-size: 1.05rem;
 		color: var(--text-muted);
-		line-height: 1.7;
-		padding-left: 24px;
+		line-height: 1.65;
+		padding-left: 22px;
 		position: relative;
 	}
 
@@ -506,8 +507,11 @@
 	/* ── RESPONSIVE ── */
 	@media (max-width: 1024px) {
 		.story__inner {
-			grid-template-columns: 1fr 300px;
+			grid-template-columns: 1fr 250px;
 			gap: 0 52px;
+		}
+		.work__list {
+			grid-template-columns: repeat(2, 1fr);
 		}
 	}
 

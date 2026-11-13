@@ -112,7 +112,7 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
 	<div class="page-hero__inner container">
-		<h1>Свържи се с<br /><em>Кристина Дойчинова</em></h1>
+		<h1>Свържи се с<br /><em>Кристина</em></h1>
 		<p class="page-hero__desc">
 			Имаш въпрос или искаш да запишеш среща? Изпрати съобщение чрез формата по-долу.
 		</p>
@@ -406,7 +406,7 @@
 		font-size: 0.95rem;
 		font-weight: 300;
 		color: var(--text);
-		background: transparent;
+		background: rgba(45, 35, 33, 0.07);
 		border: 1px solid var(--border);
 		border-radius: 8px;
 		padding: 13px 16px;

@@ -198,7 +198,10 @@
 
 	.hero__img {
 		position: absolute;
-		inset: 0;
+		top: var(--nav-h);
+		left: 0;
+		right: 0;
+		bottom: 0;
 		overflow: hidden;
 	}
 
@@ -206,7 +209,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: right center;
+		object-position: right top;
 	}
 
 	.hero__content {
@@ -217,10 +220,10 @@
 		align-items: center;
 		background: linear-gradient(
 			to right,
-			rgba(237, 234, 229, 0.97) 0%,
-			rgba(237, 234, 229, 0.9) 30%,
-			rgba(237, 234, 229, 0.5) 55%,
-			rgba(237, 234, 229, 0) 72%
+			rgba(237, 234, 229, 0.88) 0%,
+			rgba(237, 234, 229, 0.72) 28%,
+			rgba(237, 234, 229, 0.3) 52%,
+			rgba(237, 234, 229, 0) 68%
 		);
 	}
 
@@ -255,7 +258,7 @@
 
 	/* ======= QUOTE ======= */
 	.quote-section {
-		padding: 90px 0;
+		padding: 56px 0;
 		border-top: 1px solid var(--border);
 		border-bottom: 1px solid var(--border);
 	}

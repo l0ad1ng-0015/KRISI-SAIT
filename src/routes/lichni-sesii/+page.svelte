@@ -340,6 +340,11 @@
 		overflow: hidden;
 	}
 
+	.session--open .session__desc {
+		font-size: 1.03rem;
+		line-height: 2.0;
+	}
+
 	.session__quote {
 		font-family: var(--heading-font);
 		font-size: 1.1rem;

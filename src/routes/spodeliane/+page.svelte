@@ -94,7 +94,7 @@
 		min-height: 55vh;
 		display: flex;
 		align-items: center;
-		background: linear-gradient(to right, rgba(237, 234, 229, 0.96) 0%, rgba(237, 234, 229, 0.88) 38%, rgba(237, 234, 229, 0.5) 65%, transparent 85%);
+		background: linear-gradient(to right, rgba(237, 234, 229, 0.82) 0%, rgba(237, 234, 229, 0.68) 35%, rgba(237, 234, 229, 0.3) 60%, transparent 80%);
 	}
 
 	.page-hero__inner {
@@ -128,7 +128,7 @@
 		font-family: var(--heading-font);
 		font-size: clamp(1.1rem, 2vw, 1.4rem);
 		font-style: italic;
-		color: var(--text-muted);
+		color: var(--text);
 		line-height: 1.65;
 		max-width: 480px;
 	}
