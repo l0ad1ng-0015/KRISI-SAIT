@@ -347,11 +347,11 @@
 
 	.session__quote {
 		font-family: var(--heading-font);
-		font-size: 1.1rem;
+		font-size: 1.25rem;
 		font-style: italic;
 		color: var(--secondary);
-		border-left: 2px solid var(--secondary);
-		padding: 4px 0 4px 20px;
+		border-left: 3px solid var(--secondary);
+		padding: 6px 0 6px 22px;
 		margin: 0 0 22px;
 		max-width: 500px;
 		line-height: 1.55;
@@ -359,11 +359,11 @@
 
 	.session__close-quote {
 		font-family: var(--heading-font);
-		font-size: 1.05rem;
+		font-size: 1.25rem;
 		font-style: italic;
 		color: var(--text);
-		border-left: 2px solid var(--secondary);
-		padding: 4px 0 4px 20px;
+		border-left: 3px solid var(--secondary);
+		padding: 6px 0 6px 22px;
 		margin: 20px 0 24px;
 		max-width: 500px;
 		line-height: 1.55;

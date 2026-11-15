@@ -309,6 +309,7 @@
 		text-align: center;
 		align-items: center;
 		border-right: 1px solid var(--border);
+		background: rgba(45, 35, 33, 0.07);
 		transition: background 0.25s ease;
 	}
 	.info__item:last-child {
