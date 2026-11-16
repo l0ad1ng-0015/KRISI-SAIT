@@ -38,12 +38,12 @@
 </script>
 
 <svelte:head>
-	<title>Лични сесии — Кристина Дойчинова | Ментор</title>
+	<title>Лични срещи — Кристина Дойчинова | Ментор</title>
 	<meta
 		name="description"
 		content="Индивидуални сесии с Кристина Дойчинова — ментор в себепознанието. Лична среща, онлайн сесия или медитативна сесия. Запишете своята сесия."
 	/>
-	<meta property="og:title" content="Лични сесии — Кристина Дойчинова | Ментор" />
+	<meta property="og:title" content="Лични срещи — Кристина Дойчинова | Ментор" />
 	<meta
 		property="og:description"
 		content="Индивидуални сесии с Кристина Дойчинова — ментор в себепознанието. Лична среща, онлайн сесия или медитативна сесия. Запишете своята сесия."
@@ -54,7 +54,7 @@
 <!-- PAGE HERO -->
 <section class="page-hero">
 	<div class="page-hero__inner container">
-		<h1>Лични<br /><em>сесии</em></h1>
+		<h1>Лични<br /><em>срещи</em></h1>
 		<div class="page-hero__divider" aria-hidden="true"></div>
 		<p class="page-hero__quote">„Време да възстановиш взаимоотношенията и връзката със себе си"</p>
 		<div class="page-hero__meta">

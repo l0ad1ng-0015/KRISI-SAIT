@@ -3,6 +3,21 @@
 	import { cubicOut } from 'svelte/easing';
 
 	let expanded = $state(false);
+
+	const pillars = [
+		{
+			title: 'Всичко в теб е наред',
+			desc: 'Твоята същност е по-голяма от историите, които си научил за себе си'
+		},
+		{
+			title: 'Мирът е твоята природа',
+			desc: 'Да бъдеш свързан със себе си, докато преживяваш живота такъв, какъвто идва'
+		},
+		{
+			title: 'Автентичността е свобода',
+			desc: 'Да живееш в съгласие със себе си и с онова, което истински има значение за теб'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -131,16 +146,19 @@
 			</p>
 
 			<p class="work__list-label">Независимо дали се стремиш към:</p>
-			<ul class="work__list">
-				<li>По-добри взаимоотношения</li>
-				<li>По-здравословни връзки</li>
-				<li>Намаляване на стреса и тревожността</li>
-				<li>Яснота в собствената ти ситуация, чувства и поведения</li>
-				<li>Разбиране и свързване с емоциите</li>
-				<li>Радост, спонтанност и чувство на свобода и автентичност</li>
-				<li>Удовлетворение, лекота и разблокиране на креативността</li>
-			</ul>
+		</div>
 
+		<div class="work__pillars">
+			{#each pillars as pillar, i}
+				<div class="work__pillar">
+					<span class="work__pillar-num">0{i + 1}</span>
+					<h3 class="work__pillar-title">{pillar.title}</h3>
+					<p class="work__pillar-desc">{pillar.desc}</p>
+				</div>
+			{/each}
+		</div>
+
+		<div class="work__body">
 			<p class="work__closing">
 				В основата стои възстановяването на взаимоотношенията с теб, от които зависи всичко
 				друго. Моята работа като ментор е да намерим уникалния път към твоята съкровена същност,
@@ -170,7 +188,10 @@
 
 	.page-hero__bg {
 		position: absolute;
-		inset: 0;
+		top: var(--nav-h);
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 
 	.page-hero__bg img {
@@ -395,7 +416,7 @@
 	}
 
 	.work__inner {
-		max-width: 820px;
+		max-width: 1060px;
 	}
 
 	.work__header {
@@ -420,52 +441,67 @@
 	.work__lead {
 		font-size: clamp(1rem, 1.6vw, 1.15rem);
 		color: var(--text);
-		line-height: 1.9;
-		margin-bottom: 26px;
+		line-height: 1.75;
+		margin-bottom: 22px;
 	}
 
 	.work__p {
 		font-size: clamp(1rem, 1.6vw, 1.1rem);
 		color: var(--text-muted);
-		line-height: 1.95;
-		margin-bottom: 32px;
+		line-height: 1.8;
+		margin-bottom: 28px;
 	}
 
 	.work__list-label {
-		font-size: 1rem;
+		font-size: 1.5rem;
 		color: var(--text);
 		font-style: italic;
 		font-family: var(--heading-font);
-		margin-bottom: 16px;
+		margin-bottom: 0;
+		line-height: 1.4;
 	}
 
-	.work__list {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 32px;
+	/* ── PILLARS ── */
+	.work__pillars {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 8px 32px;
+		border-top: 1px solid var(--border);
+		margin: 36px 0 48px;
 	}
 
-	.work__list li {
-		font-size: 1.05rem;
+	.work__pillar {
+		padding: 44px 40px;
+		border-right: 1px solid var(--border);
+	}
+
+	.work__pillar:last-child {
+		border-right: none;
+	}
+
+	.work__pillar-num {
+		font-family: var(--heading-font);
+		font-size: 4rem;
+		font-style: italic;
+		color: var(--secondary);
+		opacity: 0.18;
+		display: block;
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+
+	.work__pillar-title {
+		font-family: var(--heading-font);
+		font-size: 1.8rem;
+		font-weight: 400;
+		color: var(--text);
+		margin-bottom: 14px;
+		line-height: 1.1;
+	}
+
+	.work__pillar-desc {
+		font-size: 0.95rem;
 		color: var(--text-muted);
-		line-height: 1.65;
-		padding-left: 22px;
-		position: relative;
-	}
-
-	.work__list li::before {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 11px;
-		width: 6px;
-		height: 6px;
-		border-radius: 50%;
-		background: var(--secondary);
-		opacity: 0.5;
+		line-height: 1.8;
 	}
 
 	.work__closing {
@@ -510,8 +546,16 @@
 			grid-template-columns: 1fr 250px;
 			gap: 0 52px;
 		}
-		.work__list {
+		.work__pillars {
 			grid-template-columns: repeat(2, 1fr);
+		}
+		.work__pillar:nth-child(2) {
+			border-right: none;
+		}
+		.work__pillar:nth-child(3) {
+			border-top: 1px solid var(--border);
+			border-right: none;
+			grid-column: 1 / -1;
 		}
 	}
 
@@ -540,6 +584,28 @@
 		.story__portrait {
 			position: static;
 			max-width: 400px;
+		}
+
+		.work__pillars {
+			grid-template-columns: 1fr;
+		}
+
+		.work__pillar {
+			border-right: none;
+			border-bottom: 1px solid var(--border);
+		}
+
+		.work__pillar:last-child {
+			border-bottom: none;
+		}
+
+		.work__pillar:nth-child(2) {
+			border-right: none;
+		}
+
+		.work__pillar:nth-child(3) {
+			border-top: none;
+			grid-column: auto;
 		}
 	}
 

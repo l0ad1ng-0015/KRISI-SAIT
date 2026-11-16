@@ -1,24 +1,24 @@
 ﻿<script>
 	const reviews = [
 		{
-			text: 'Придобих самоувереност и любов към себе си. Интегрирах вътрешен нежен глас, грижовен. Спрях да търся спасение от други хора и започнах да изграждам вътрешна сила. Осъзнах, че съм прекрасна жена, жена която може!',
-			name: 'Цветелина Ц.'
-		},
-		{
 			text: 'Спомних си и приех миналото си и себе си. Осъзнах, че не съм счупена и сбъркана. Че с мен всичко е наред и съм свободна да съм си себе си без да търся нечие одобрение отвън. От теб научих какво е състрадание и самосъстрадание. Оказаха се много важни за моя път.',
 			name: 'С. Димитрова'
+		},
+		{
+			text: 'Придобих самоувереност и любов към себе си. Интегрирах вътрешен нежен глас, грижовен. Спрях да търся спасение от други хора и започнах да изграждам вътрешна сила. Осъзнах, че съм прекрасна жена, жена която може!',
+			name: 'Цветелина Ц.'
 		},
 		{
 			text: 'Добих правилната самооценка и това ми даде сила и енергия да правя нещата които мога и обичам. Осъзнах кой съм, какво мога, какво искам и как да го постигна.',
 			name: 'Светослав Партенев'
 		},
 		{
-			text: 'Чувствах се тревожен и несигурен в себе си. Търсех повече вътрешно спокойствие и стабилност в ежедневието си. Поех отговорност за себе си и започнах да обръщам внимание на емоциите си. Осъзнах, че съм достатъчен. Най-ценни бяха личните примери, както и радикалната промяна на гледната точка.',
-			name: 'Д. Христов'
-		},
-		{
 			text: 'Разбрах че мога да имам всичко — и лечението, и духовното, и материалното и семейството и всичко това в един живот, без да трябва да жертвам едното заради другото. Отворих се към майка ми, казах й за първи път в живота ми, че я обичам, започнах да получавам и приемам неща от нея. А в последствие и от другите жени в живота ми.',
 			name: 'Ивайло Н.'
+		},
+		{
+			text: 'Чувствах се тревожен и несигурен в себе си. Търсех повече вътрешно спокойствие и стабилност в ежедневието си. Поех отговорност за себе си и започнах да обръщам внимание на емоциите си. Осъзнах, че съм достатъчен. Най-ценни бяха личните примери, както и радикалната промяна на гледната точка.',
+			name: 'Д. Христов'
 		},
 		{
 			text: 'Бях объркана по пътя към себе си. Търсех любов. Разбрах коя съм. Оцених себе си. Обичам се. Осъзнах, че любовта е в нас, а не извън нас.',
@@ -29,7 +29,9 @@
 	let reviewPage = $state(0);
 	const perPage = 3;
 	const totalPages = $derived(Math.ceil(reviews.length / perPage));
-	const visibleReviews = $derived(reviews.slice(reviewPage * perPage, reviewPage * perPage + perPage));
+	const visibleReviews = $derived(
+		reviews.slice(reviewPage * perPage, reviewPage * perPage + perPage)
+	);
 </script>
 
 <svelte:head>
@@ -86,7 +88,8 @@
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">Лични срещи</h3>
 				<p class="svc-card__desc">
-					Всяко човешко същество има способността да създава своята опитност по безброй начини. Ще ти помогна да откриеш твоите.
+					Всяко човешко същество има способността да създава своята опитност по безброй начини. Ще
+					ти помогна да откриеш твоите.
 				</p>
 				<span class="svc-card__link">Научи повече →</span>
 			</div>
@@ -110,7 +113,8 @@
 			<div class="svc-card__body">
 				<h3 class="svc-card__title">За Кристина</h3>
 				<p class="svc-card__desc">
-					Моята работа е да разбереш собствените си модели и вътрешни динамики, така че да намериш свобода.
+					Моята работа е да разбереш собствените си модели и вътрешни динамики, така че да намериш
+					свобода.
 				</p>
 				<span class="svc-card__link">Прочети повече →</span>
 			</div>
@@ -170,7 +174,13 @@
 					aria-label="Предишни отзиви"
 				>
 					<svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-						<path d="M17.5 11h-13M10 5L4.5 11 10 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path
+							d="M17.5 11h-13M10 5L4.5 11 10 17"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
 					</svg>
 				</button>
 				<button
@@ -180,7 +190,13 @@
 					aria-label="Следващи отзиви"
 				>
 					<svg width="20" height="20" viewBox="0 0 22 22" fill="none">
-						<path d="M4.5 11h13M12 5l5.5 6L12 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path
+							d="M4.5 11h13M12 5l5.5 6L12 17"
+							stroke="currentColor"
+							stroke-width="1.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
 					</svg>
 				</button>
 			</div>
@@ -308,7 +324,9 @@
 		border-radius: var(--radius);
 		overflow: hidden;
 		text-decoration: none;
-		transition: transform 0.35s ease, box-shadow 0.35s ease;
+		transition:
+			transform 0.35s ease,
+			box-shadow 0.35s ease;
 		box-shadow: 0 2px 16px rgba(77, 39, 39, 0.07);
 	}
 
@@ -556,7 +574,10 @@
 		justify-content: center;
 		cursor: pointer;
 		color: var(--secondary);
-		transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+		transition:
+			background 0.25s ease,
+			color 0.25s ease,
+			opacity 0.25s ease;
 	}
 
 	.reviews-arrow:hover:not(:disabled) {
