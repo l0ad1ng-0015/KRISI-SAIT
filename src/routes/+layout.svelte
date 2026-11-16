@@ -2,7 +2,7 @@
 	import '../app.css';
 	import { page } from '$app/state';
 	import { onMount } from 'svelte';
-	import favicon from 'static/logos/logo-black-initials.png';
+	import favicon from '/logos/logo-black-initials.png';
 
 	let { children } = $props();
 
