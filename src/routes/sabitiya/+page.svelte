@@ -81,6 +81,15 @@
 	<meta property="og:title" content="Предстоящи Събития — Кристина Дойчинова" />
 	<meta property="og:description" content="Вътрешен мир и автентичност, онлайн медитации и уебинари с Кристина Дойчинова. Регистрирайте се за следващото събитие." />
 	<meta property="og:url" content="https://kristinadoychinova.com/sabitiya" />
+	<meta property="og:image" content="https://kristinadoychinova.com/photos/sabitiya.webp" />
+	<meta property="og:image:alt" content="Предстоящи събития с Кристина Дойчинова" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Предстоящи Събития — Кристина Дойчинова | Ментор" />
+	<meta
+		name="twitter:description"
+		content="Вътрешен мир и автентичност, онлайн медитации и уебинари с Кристина Дойчинова. Регистрирайте се за следващото събитие."
+	/>
+	<meta name="twitter:image" content="https://kristinadoychinova.com/photos/sabitiya.webp" />
 </svelte:head>
 
 <!-- PAGE HERO -->

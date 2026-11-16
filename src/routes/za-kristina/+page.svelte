@@ -32,6 +32,15 @@
 		content="Кристина Дойчинова — ментор психо-емоционални динамики и себепознание. Близо 20 години работа с хора. Свободата започва със себепознанието."
 	/>
 	<meta property="og:url" content="https://kristinadoychinova.com/za-kristina" />
+	<meta property="og:image" content="https://kristinadoychinova.com/photos/za-kristina-hero.webp" />
+	<meta property="og:image:alt" content="Кристина Дойчинова" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="За Кристина Дойчинова — Ментор в Себепознанието" />
+	<meta
+		name="twitter:description"
+		content="Опознай Кристина Дойчинова — нейният път, подход и философия в менторската работа и психо-емоционалните динамики."
+	/>
+	<meta name="twitter:image" content="https://kristinadoychinova.com/photos/za-kristina-hero.webp" />
 </svelte:head>
 
 <!-- HERO -->

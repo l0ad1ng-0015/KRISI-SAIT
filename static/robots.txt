@@ -1,5 +1,8 @@
-# allow crawling everything by default
+# allow crawling everything by default, except private/demo/admin areas
 User-agent: *
-Disallow:
+Disallow: /admin
+Disallow: /api
+Disallow: /lichni-sesii-alt
+Disallow: /obucheniya
 
 Sitemap: https://kristinadoychinova.com/sitemap.xml

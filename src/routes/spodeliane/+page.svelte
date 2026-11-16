@@ -24,6 +24,15 @@
 		content="Статии и публикации от Кристина Дойчинова — ментор в себепознанието. Размисли за вътрешния мир, автентичността и психо-емоционалните динамики."
 	/>
 	<meta property="og:url" content="https://kristinadoychinova.com/spodeliane" />
+	<meta property="og:image" content="https://kristinadoychinova.com/photos/kristina-yellow-blouse.webp" />
+	<meta property="og:image:alt" content="Публикации от Кристина Дойчинова" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Публикации — Кристина Дойчинова" />
+	<meta
+		name="twitter:description"
+		content="Статии и публикации от Кристина Дойчинова — ментор в себепознанието. Размисли за вътрешния мир, автентичността и психо-емоционалните динамики."
+	/>
+	<meta name="twitter:image" content="https://kristinadoychinova.com/photos/kristina-yellow-blouse.webp" />
 </svelte:head>
 
 <!-- PAGE HERO -->

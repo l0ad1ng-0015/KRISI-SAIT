@@ -49,6 +49,15 @@
 		content="Индивидуални сесии с Кристина Дойчинова — ментор в себепознанието. Лична среща, онлайн сесия или медитативна сесия. Запишете своята сесия."
 	/>
 	<meta property="og:url" content="https://kristinadoychinova.com/lichni-sreshti" />
+	<meta property="og:image" content="https://kristinadoychinova.com/photos/lichni-sreshti.webp" />
+	<meta property="og:image:alt" content="Лични срещи с Кристина Дойчинова" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Лични срещи — Кристина Дойчинова | Ментор" />
+	<meta
+		name="twitter:description"
+		content="Индивидуални сесии с Кристина Дойчинова — ментор в себепознанието. Лична среща, онлайн сесия или медитативна сесия. Запишете своята сесия."
+	/>
+	<meta name="twitter:image" content="https://kristinadoychinova.com/photos/lichni-sreshti.webp" />
 </svelte:head>
 
 <!-- PAGE HERO -->

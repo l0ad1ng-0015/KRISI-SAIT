@@ -1,5 +1,6 @@
 <svelte:head>
 	<title>Лична сесия — Кристина Дойчинова</title>
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <!-- PAGE HERO -->

@@ -107,6 +107,15 @@
 	<meta property="og:title" content="Контакти — Запишете Среща | Кристина Дойчинова" />
 	<meta property="og:description" content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете среща или задайте въпрос чрез контактната форма." />
 	<meta property="og:url" content="https://kristinadoychinova.com/kontakti" />
+	<meta property="og:image" content="https://kristinadoychinova.com/photos/kristina-presenting.webp" />
+	<meta property="og:image:alt" content="Свържи се с Кристина Дойчинова" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Контакти — Запишете Среща | Кристина Дойчинова" />
+	<meta
+		name="twitter:description"
+		content="Свържете се с Кристина Дойчинова — ментор в себепознанието. Запишете среща или задайте въпрос чрез контактната форма."
+	/>
+	<meta name="twitter:image" content="https://kristinadoychinova.com/photos/kristina-presenting.webp" />
 </svelte:head>
 
 <!-- PAGE HERO -->

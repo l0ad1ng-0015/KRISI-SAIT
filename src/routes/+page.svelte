@@ -46,6 +46,15 @@
 		content="Свободата започва със себепознанието. Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Индивидуални срещи и групови събития."
 	/>
 	<meta property="og:url" content="https://kristinadoychinova.com/" />
+	<meta property="og:image" content="https://kristinadoychinova.com/photos/hero.webp" />
+	<meta property="og:image:alt" content="Кристина Дойчинова — ментор в себепознанието" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Кристина Дойчинова — Ментор в Себепознанието" />
+	<meta
+		name="twitter:description"
+		content="Свободата започва със себепознанието. Кристина Дойчинова — ментор в себепознанието и психо-емоционалните динамики. Индивидуални срещи и групови събития."
+	/>
+	<meta name="twitter:image" content="https://kristinadoychinova.com/photos/hero.webp" />
 </svelte:head>
 
 <!-- HERO -->

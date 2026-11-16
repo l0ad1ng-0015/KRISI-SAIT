@@ -26,6 +26,7 @@
 
 <svelte:head>
 	<title>Лични сесии — Кристина Дойчинова</title>
+	<meta name="robots" content="noindex, nofollow" />
 </svelte:head>
 
 <!-- CLIENT DEMO LABEL -->
