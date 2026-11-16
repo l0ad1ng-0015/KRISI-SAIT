@@ -60,6 +60,8 @@
 		name: 'Кристина Дойчинова',
 		jobTitle: 'Ментор',
 		url: 'https://kristinadoychinova.com',
+		telephone: '+359888900983',
+		email: 'kristina.doychinova7@gmail.com',
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: 'София',
@@ -141,6 +143,10 @@
 				<p class="footer__tagline">
 					Кристина Дойчинова<br /><em>Ментор</em>
 				</p>
+				<div class="footer__contact">
+					<a href="tel:+359888900983">+359 888 900 983</a>
+					<a href="mailto:kristina.doychinova7@gmail.com">kristina.doychinova7@gmail.com</a>
+				</div>
 			</div>
 
 			<nav class="footer__nav">
@@ -354,6 +360,23 @@
 		font-size: 0.85rem;
 		line-height: 1.7;
 		color: rgba(237, 234, 229, 0.5);
+	}
+
+	.footer__contact {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		margin-top: 14px;
+	}
+
+	.footer__contact a {
+		font-size: 0.8rem;
+		color: rgba(237, 234, 229, 0.55);
+		transition: color 0.2s;
+	}
+
+	.footer__contact a:hover {
+		color: rgba(237, 234, 229, 0.9);
 	}
 
 	.footer__tagline em {

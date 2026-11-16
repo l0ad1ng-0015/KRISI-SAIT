@@ -122,13 +122,13 @@
 <!-- CONTACT INFO -->
 <section class="info">
 	<div class="info__inner container">
-		<a class="info__item" href="mailto:contact@kristina-doychinova.bg">
+		<a class="info__item" href="mailto:kristina.doychinova7@gmail.com">
 			<span class="info__label">Имейл</span>
-			<span class="info__value">contact@kristina-doychinova.bg</span>
+			<span class="info__value">kristina.doychinova7@gmail.com</span>
 		</a>
-		<a class="info__item" href="tel:+359888123456">
+		<a class="info__item" href="tel:+359888900983">
 			<span class="info__label">Телефон</span>
-			<span class="info__value">+359 888 123 456</span>
+			<span class="info__value">+359 888 900 983</span>
 		</a>
 		<div class="info__item">
 			<span class="info__label">Адрес</span>
