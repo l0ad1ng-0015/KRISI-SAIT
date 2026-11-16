@@ -181,38 +181,32 @@
 	/* ── PAGE HERO ── */
 	.page-hero {
 		position: relative;
-		min-height: 65vh;
 		overflow: hidden;
 		border-bottom: 1px solid var(--border);
 	}
 
 	.page-hero__bg {
-		position: absolute;
-		top: var(--nav-h);
-		left: 0;
-		right: 0;
-		bottom: 0;
+		display: block;
+		padding-top: var(--nav-h);
 	}
 
 	.page-hero__bg img {
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
+		height: auto;
+		display: block;
 	}
 
 	.page-hero__overlay {
-		position: relative;
-		z-index: 1;
-		min-height: 65vh;
+		position: absolute;
+		inset: 0;
 		display: flex;
 		align-items: center;
 		background: linear-gradient(
 			to right,
-			rgba(237, 234, 229, 0.97) 0%,
-			rgba(237, 234, 229, 0.9) 35%,
-			rgba(237, 234, 229, 0.55) 60%,
-			transparent 82%
+			rgba(237, 234, 229, 0.95) 0%,
+			rgba(237, 234, 229, 0.85) 32%,
+			rgba(237, 234, 229, 0.45) 58%,
+			transparent 78%
 		);
 	}
 
@@ -562,16 +556,22 @@
 	@media (max-width: 900px) {
 		.page-hero__overlay {
 			background: linear-gradient(
-				to bottom,
-				rgba(237, 234, 229, 0.97) 0%,
-				rgba(237, 234, 229, 0.88) 60%,
-				rgba(237, 234, 229, 0.7) 100%
+				to right,
+				rgba(237, 234, 229, 0.88) 0%,
+				rgba(237, 234, 229, 0.65) 50%,
+				rgba(237, 234, 229, 0.25) 100%
 			);
 		}
 
 		.page-hero__text {
 			padding: calc(var(--nav-h) + 40px) 24px 60px;
 			max-width: 100%;
+		}
+
+		.page-hero__bg img {
+			height: 320px;
+			object-fit: cover;
+			object-position: center 20%;
 		}
 	}
 

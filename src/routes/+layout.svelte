@@ -99,7 +99,9 @@
 {#if !isAdmin}
 <header class="nav" class:nav--scrolled={scrolled}>
 	<div class="nav__inner container">
-		<a href="/" class="nav__logo">КД</a>
+		<a href="/" class="nav__logo">
+			<img src="/logos/logo-black-name.png" alt="Kristina Doychinova" class="nav__logo-img" />
+		</a>
 
 		<nav class="nav__links" class:nav__links--open={mobileOpen}>
 			{#each links as { href, label }}
@@ -229,12 +231,16 @@
 	}
 
 	.nav__logo {
-		font-family: var(--heading-font);
-		font-size: 1.7rem;
-		font-weight: 500;
-		letter-spacing: 0.06em;
-		color: var(--secondary);
 		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+	}
+
+	.nav__logo-img {
+		height: 48px;
+		width: auto;
+		display: block;
+		mix-blend-mode: multiply;
 	}
 
 	.nav__links {
@@ -504,6 +510,20 @@
 	}
 	.footer__legal a:hover {
 		color: rgba(237, 234, 229, 0.7);
+	}
+
+	/* ======= TABLET — tighten links before mobile menu kicks in ======= */
+	@media (max-width: 1150px) {
+		.nav__links {
+			gap: 22px;
+		}
+		.nav__link {
+			font-size: 0.68rem;
+			letter-spacing: 0.08em;
+		}
+		.nav__logo-img {
+			height: 40px;
+		}
 	}
 
 	/* ======= MOBILE ======= */

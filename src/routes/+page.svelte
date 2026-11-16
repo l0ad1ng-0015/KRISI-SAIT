@@ -225,7 +225,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: right top;
+		object-position: 62% top;
 	}
 
 	.hero__content {
