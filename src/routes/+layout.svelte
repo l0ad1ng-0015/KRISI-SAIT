@@ -45,7 +45,7 @@
 
 	const links = [
 		{ href: '/', label: 'Начало' },
-		{ href: '/lichni-sesii', label: 'Лични срещи' },
+		{ href: '/lichni-sreshti', label: 'Лични срещи' },
 		{ href: '/sabitiya', label: 'Събития' },
 		{ href: '/za-kristina', label: 'За Кристина' },
 		{ href: '/spodeliane', label: 'Споделяне' },
@@ -100,7 +100,7 @@
 <header class="nav" class:nav--scrolled={scrolled}>
 	<div class="nav__inner container">
 		<a href="/" class="nav__logo">
-			<img src="/logos/logo-black-name.png" alt="Kristina Doychinova" class="nav__logo-img" />
+			<img src="/logos/logo-black-initials.png" alt="Kristina Doychinova" class="nav__logo-img" />
 		</a>
 
 		<nav class="nav__links" class:nav__links--open={mobileOpen}>
@@ -135,7 +135,9 @@
 	<div class="footer__inner container">
 		<div class="footer__top">
 			<div class="footer__brand">
-				<span class="footer__logo">КД</span>
+				<a href="/" class="footer__logo-link">
+					<img src="/logos/logo-black-initials.png" alt="Kristina Doychinova" class="footer__logo-img" />
+				</a>
 				<p class="footer__tagline">
 					Кристина Дойчинова<br /><em>Ментор</em>
 				</p>
@@ -237,7 +239,7 @@
 	}
 
 	.nav__logo-img {
-		height: 48px;
+		height: 56px;
 		width: auto;
 		display: block;
 		mix-blend-mode: multiply;
@@ -334,14 +336,18 @@
 		border-bottom: 1px solid rgba(237, 234, 229, 0.1);
 	}
 
-	.footer__logo {
-		font-family: var(--heading-font);
-		font-size: 2rem;
-		font-weight: 500;
-		color: var(--bg);
-		letter-spacing: 0.06em;
-		display: block;
+	.footer__logo-link {
+		display: inline-block;
 		margin-bottom: 12px;
+	}
+
+	.footer__logo-img {
+		height: 68px;
+		width: auto;
+		display: block;
+		filter: invert(1);
+		mix-blend-mode: screen;
+		opacity: 0.85;
 	}
 
 	.footer__tagline {
@@ -522,7 +528,7 @@
 			letter-spacing: 0.08em;
 		}
 		.nav__logo-img {
-			height: 40px;
+			height: 48px;
 		}
 	}
 

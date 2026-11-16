@@ -48,7 +48,7 @@
 		property="og:description"
 		content="Индивидуални сесии с Кристина Дойчинова — ментор в себепознанието. Лична среща, онлайн сесия или медитативна сесия. Запишете своята сесия."
 	/>
-	<meta property="og:url" content="https://kristinadoychinova.com/lichni-sesii" />
+	<meta property="og:url" content="https://kristinadoychinova.com/lichni-sreshti" />
 </svelte:head>
 
 <!-- PAGE HERO -->

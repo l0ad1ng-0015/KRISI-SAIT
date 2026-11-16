@@ -81,7 +81,7 @@
 <!-- 3 SERVICE CARDS -->
 <section class="services">
 	<div class="services__inner container">
-		<a href="/lichni-sesii" class="svc-card">
+		<a href="/lichni-sreshti" class="svc-card">
 			<div class="svc-card__img">
 				<img src="/photos/lichni-sreshti.webp" alt="Лични срещи" loading="lazy" />
 			</div>
@@ -225,7 +225,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: 62% top;
+		object-position: 82% top;
 	}
 
 	.hero__content {
