@@ -83,7 +83,6 @@
 
 <svelte:head>
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-	<link rel="alternate icon" href="/logos/logo-light-initials.png" />
 	<link rel="canonical" href="https://kristinadoychinova.com{page.url.pathname}" />
 	<title>Кристина Дойчинова — Ментор в Себепознанието</title>
 	<meta
