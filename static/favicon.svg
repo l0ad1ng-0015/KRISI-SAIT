@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+	<style>
+		.icon-dark {
+			display: none;
+		}
+		@media (prefers-color-scheme: dark) {
+			.icon-light {
+				display: none;
+			}
+			.icon-dark {
+				display: block;
+			}
+		}
+	</style>
+	<image
+		class="icon-light"
+		href="/logos/logo-black-initials.png"
+		x="0"
+		y="0"
+		width="100"
+		height="100"
+		preserveAspectRatio="xMidYMid meet"
+	/>
+	<image
+		class="icon-dark"
+		href="/logos/logo-light-initials.png"
+		x="0"
+		y="0"
+		width="100"
+		height="100"
+		preserveAspectRatio="xMidYMid meet"
+	/>
+</svg>
