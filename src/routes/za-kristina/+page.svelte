@@ -223,7 +223,7 @@
 	.page-hero__bg img {
 		width: 100%;
 		height: auto;
-		max-height: 620px;
+		max-height: 460px;
 		object-fit: cover;
 		object-position: center bottom;
 		display: block;
@@ -444,7 +444,7 @@
 	}
 
 	.story__caption-signature {
-		height: 28px;
+		height: 40px;
 		width: auto;
 		margin-top: 10px;
 		opacity: 0.8;
@@ -622,6 +622,11 @@
 			height: 320px;
 			object-fit: cover;
 			object-position: center 20%;
+		}
+
+		.page-hero__desc {
+			font-size: 1.2rem;
+			max-width: 100%;
 		}
 	}
 

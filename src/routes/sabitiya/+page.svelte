@@ -269,7 +269,7 @@
 	}
 
 	.page-hero__signature {
-		height: 32px;
+		height: 46px;
 		width: auto;
 		margin-bottom: 28px;
 		opacity: 0.8;

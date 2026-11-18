@@ -206,7 +206,7 @@
 	}
 
 	.page-hero__signature {
-		height: 32px;
+		height: 46px;
 		width: auto;
 		margin-bottom: 28px;
 		opacity: 0.8;
@@ -411,7 +411,7 @@
 	}
 
 	.quote-signature {
-		height: 26px;
+		height: 38px;
 		width: auto;
 		margin-top: 12px;
 		opacity: 0.8;

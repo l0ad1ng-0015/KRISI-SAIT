@@ -327,7 +327,7 @@
 	}
 
 	.quote-section__signature {
-		height: 36px;
+		height: 52px;
 		width: auto;
 		margin-top: 18px;
 		opacity: 0.82;
@@ -503,39 +503,23 @@
 
 	.reviews-track {
 		display: grid;
-		grid-template-columns: 1.55fr 1fr;
-		grid-template-rows: auto auto;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 24px;
+		align-items: stretch;
 	}
 
 	.review-card {
 		background: var(--card-bg);
 		border-radius: var(--radius);
-		padding: 36px 32px 40px;
+		padding: 32px 28px 34px;
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
-	}
-
-	/* Dominant — first card spans both rows */
-	.review-card:first-child {
-		grid-row: 1 / 3;
-		padding: 52px 48px 56px;
-	}
-
-	.review-card:first-child .review-card__mark {
-		font-size: 5rem;
-		opacity: 0.45;
-	}
-
-	.review-card:first-child .review-card__text {
-		font-size: clamp(1.3rem, 2vw, 1.65rem);
-		line-height: 1.65;
+		gap: 14px;
 	}
 
 	.review-card__mark {
 		font-family: var(--heading-font);
-		font-size: 3rem;
+		font-size: 2.6rem;
 		line-height: 0.6;
 		color: var(--secondary);
 		opacity: 0.25;
@@ -543,11 +527,15 @@
 
 	.review-card__text {
 		font-family: var(--heading-font);
-		font-size: 1.05rem;
+		font-size: 0.98rem;
 		font-style: italic;
 		color: var(--text);
-		line-height: 1.65;
+		line-height: 1.6;
 		flex: 1;
+		display: -webkit-box;
+		-webkit-line-clamp: 6;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 
 	.review-card__name {
@@ -625,6 +613,7 @@
 			display: flex;
 			flex-direction: column;
 			min-height: 0;
+			padding-top: var(--nav-h);
 		}
 
 		.hero__img {
@@ -664,21 +653,6 @@
 
 		.reviews-track {
 			grid-template-columns: 1fr;
-		}
-
-		.review-card:first-child {
-			grid-row: auto;
-			padding: 36px 32px 40px;
-		}
-
-		.review-card:first-child .review-card__mark {
-			font-size: 3rem;
-			opacity: 0.25;
-		}
-
-		.review-card:first-child .review-card__text {
-			font-size: 1.05rem;
-			line-height: 1.65;
 		}
 	}
 
