@@ -80,10 +80,16 @@
 <section class="quote-section">
 	<div class="quote-section__inner container">
 		<span class="quote-section__mark">"</span>
-		<p class="quote-section__text">
-			"Истинският мир не е липсата на конфликти, а е присъствието на абсолютната тишина в душата."
-			Садгуру
-		</p>
+		<div class="quote-section__body">
+			<p class="quote-section__text">
+				Колкото по-дълбок мир откриваш в себе си, толкова повече хаос можеш да толерираш.
+			</p>
+			<img
+				src="/logos/logo-black-name.png"
+				alt="Кристина Дойчинова"
+				class="quote-section__signature"
+			/>
+		</div>
 	</div>
 </section>
 
@@ -305,6 +311,12 @@
 		margin-top: 8px;
 	}
 
+	.quote-section__body {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
 	.quote-section__text {
 		font-family: var(--heading-font);
 		font-size: clamp(1.5rem, 2.8vw, 2.1rem);
@@ -312,6 +324,14 @@
 		font-weight: 400;
 		color: var(--text);
 		line-height: 1.55;
+	}
+
+	.quote-section__signature {
+		height: 36px;
+		width: auto;
+		margin-top: 18px;
+		opacity: 0.82;
+		mix-blend-mode: multiply;
 	}
 
 	/* ======= 3 SERVICE CARDS ======= */
@@ -463,7 +483,7 @@
 	}
 
 	.reviews-section__inner {
-		max-width: 1200px;
+		max-width: 1000px;
 	}
 
 	.reviews-section__header {
@@ -648,7 +668,17 @@
 
 		.review-card:first-child {
 			grid-row: auto;
-			padding: 40px 32px 44px;
+			padding: 36px 32px 40px;
+		}
+
+		.review-card:first-child .review-card__mark {
+			font-size: 3rem;
+			opacity: 0.25;
+		}
+
+		.review-card:first-child .review-card__text {
+			font-size: 1.05rem;
+			line-height: 1.65;
 		}
 	}
 

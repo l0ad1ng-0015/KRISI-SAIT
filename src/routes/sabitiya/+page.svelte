@@ -98,6 +98,11 @@
 		<h1>Предстоящи<br /><em>събития</em></h1>
 		<div class="page-hero__divider" aria-hidden="true"></div>
 		<p class="page-hero__quote">„Несъзнаваното има и иска да сподели толкова много. Жадува да бъде чуто и отразено."</p>
+		<img
+			src="/logos/logo-black-name.png"
+			alt="Кристина Дойчинова"
+			class="page-hero__signature"
+		/>
 		<div class="page-hero__meta">
 			<span>Преживяване</span>
 			<span class="page-hero__dot"></span>
@@ -224,7 +229,7 @@
 <style>
 	/* PAGE HERO */
 	.page-hero {
-		padding: calc(var(--nav-h) + 80px) 0 90px;
+		padding: calc(var(--nav-h) + 56px) 0 60px;
 		text-align: center;
 		border-bottom: 1px solid var(--border);
 	}
@@ -238,7 +243,7 @@
 
 	.page-hero h1 {
 		line-height: 1.04;
-		margin-bottom: 44px;
+		margin-bottom: 26px;
 	}
 
 	.page-hero h1 em {
@@ -250,7 +255,7 @@
 		height: 1px;
 		background: var(--secondary);
 		opacity: 0.35;
-		margin-bottom: 36px;
+		margin-bottom: 22px;
 	}
 
 	.page-hero__quote {
@@ -260,7 +265,15 @@
 		color: var(--text-muted);
 		line-height: 1.65;
 		max-width: 520px;
-		margin-bottom: 44px;
+		margin-bottom: 14px;
+	}
+
+	.page-hero__signature {
+		height: 32px;
+		width: auto;
+		margin-bottom: 28px;
+		opacity: 0.8;
+		mix-blend-mode: multiply;
 	}
 
 	.page-hero__meta {
@@ -283,14 +296,14 @@
 
 	/* EVENTS */
 	.events {
-		padding: 80px 0 100px;
+		padding: 56px 0 72px;
 	}
 
 	.events__inner {
 		max-width: 1060px;
 		display: flex;
 		flex-direction: column;
-		gap: 24px;
+		gap: 18px;
 	}
 
 	.event {
@@ -322,7 +335,7 @@
 		display: flex;
 		align-items: flex-start;
 		gap: 40px;
-		padding: 44px 56px;
+		padding: 34px 48px;
 	}
 
 	.event__left {

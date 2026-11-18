@@ -81,9 +81,24 @@
 				лингвистични, трансперсонални и пр. Имам богата и многолика професионална история, като
 				водещ и фасилитатор на множество терапевтични формата – групови и индивидуални. Автор
 				съм на няколко модела и обучения за психологична работа. Основател съм на Център
-				InnerSelf и председател на „Институт за холистична терапия и иновативна психология". За
-				всички тях подробно може да прочетете на
-				<a href="https://innerself.bg" target="_blank" rel="noopener">innerself.bg</a>.
+				InnerSelf и председател на „Институт за холистична терапия и иновативна психология".
+				Центърът обединява терапевти и преподаватели, споделящи визия за цялостен и човечен
+				подход към психичното здраве, а Институтът развива обучителни програми в областта на
+				хипнотерапията и психо-емоционалните динамики. За всички тях подробно може да прочетете
+				на
+				<a href="https://innerself.bg" target="_blank" rel="noopener" class="story__ext-link">
+					innerself.bg
+					<svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+						<path
+							d="M6 3H3.5A1.5 1.5 0 0 0 2 4.5v8A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V10M9.5 2H14v4.5M14 2 7 9"
+							stroke="currentColor"
+							stroke-width="1.3"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+				</a>
+				(отваря се в нов таб).
 			</p>
 
 			{#if expanded}
@@ -128,6 +143,11 @@
 			<div class="story__portrait-caption">
 				<span class="story__caption-mark">"</span>
 				<p>Дори най-безумното действие е породено от желанието да се свържем с любовта.</p>
+				<img
+					src="/logos/logo-black-name.png"
+					alt="Кристина Дойчинова"
+					class="story__caption-signature"
+				/>
 			</div>
 		</div>
 	</div>
@@ -197,11 +217,15 @@
 	.page-hero__bg {
 		display: block;
 		padding-top: var(--nav-h);
+		overflow: hidden;
 	}
 
 	.page-hero__bg img {
 		width: 100%;
 		height: auto;
+		max-height: 620px;
+		object-fit: cover;
+		object-position: center bottom;
 		display: block;
 	}
 
@@ -319,6 +343,14 @@
 		text-underline-offset: 3px;
 	}
 
+	.story__ext-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
 	.story__p {
 		font-size: 0.95rem;
 		color: var(--text-muted);
@@ -409,6 +441,15 @@
 		font-style: italic;
 		color: var(--text);
 		line-height: 1.45;
+	}
+
+	.story__caption-signature {
+		height: 28px;
+		width: auto;
+		margin-top: 10px;
+		opacity: 0.8;
+		mix-blend-mode: multiply;
+		align-self: flex-start;
 	}
 
 	/* ── РАБОТАТА МИ СЕГА ── */

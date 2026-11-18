@@ -66,6 +66,11 @@
 		<h1>Лични<br /><em>срещи</em></h1>
 		<div class="page-hero__divider" aria-hidden="true"></div>
 		<p class="page-hero__quote">„Време да възстановиш взаимоотношенията и връзката със себе си"</p>
+		<img
+			src="/logos/logo-black-name.png"
+			alt="Кристина Дойчинова"
+			class="page-hero__signature"
+		/>
 		<div class="page-hero__meta">
 			<span>Яснота</span>
 			<span class="page-hero__dot"></span>
@@ -111,13 +116,27 @@
 					{#if openIndex === i}
 						<div class="session__body" transition:slide={{ duration: 340, easing: cubicOut }}>
 							{#if session.openQuote}
-								<blockquote class="session__quote">{session.openQuote}</blockquote>
+								<blockquote class="session__quote">
+								{session.openQuote}
+								<img
+									src="/logos/logo-black-name.png"
+									alt="Кристина Дойчинова"
+									class="quote-signature"
+								/>
+							</blockquote>
 							{/if}
 							{#each session.paras as para, pi}
 								<p class="session__desc" class:session__desc--first={pi === 0}>{para}</p>
 							{/each}
 							{#if session.closeQuote}
-								<blockquote class="session__close-quote">{session.closeQuote}</blockquote>
+								<blockquote class="session__close-quote">
+									{session.closeQuote}
+									<img
+										src="/logos/logo-black-name.png"
+										alt="Кристина Дойчинова"
+										class="quote-signature"
+									/>
+								</blockquote>
 							{/if}
 							<ul class="session__points">
 								{#each session.points as point}
@@ -146,7 +165,7 @@
 <style>
 	/* PAGE HERO — centered, no image */
 	.page-hero {
-		padding: calc(var(--nav-h) + 80px) 0 90px;
+		padding: calc(var(--nav-h) + 56px) 0 60px;
 		text-align: center;
 		border-bottom: 1px solid var(--border);
 	}
@@ -161,7 +180,7 @@
 	.page-hero h1 {
 		font-size: clamp(3.8rem, 8vw, 7rem);
 		line-height: 1.04;
-		margin-bottom: 44px;
+		margin-bottom: 26px;
 	}
 
 	.page-hero h1 em {
@@ -173,7 +192,7 @@
 		height: 1px;
 		background: var(--secondary);
 		opacity: 0.35;
-		margin-bottom: 36px;
+		margin-bottom: 22px;
 	}
 
 	.page-hero__quote {
@@ -183,7 +202,15 @@
 		color: var(--text-muted);
 		line-height: 1.65;
 		max-width: 520px;
-		margin-bottom: 44px;
+		margin-bottom: 14px;
+	}
+
+	.page-hero__signature {
+		height: 32px;
+		width: auto;
+		margin-bottom: 28px;
+		opacity: 0.8;
+		mix-blend-mode: multiply;
 	}
 
 	.page-hero__meta {
@@ -206,14 +233,14 @@
 
 	/* VISUAL ACCORDION */
 	.sessions {
-		padding: 64px 0 90px;
+		padding: 48px 0 72px;
 	}
 
 	.sessions__inner {
 		max-width: 1060px;
 		display: flex;
 		flex-direction: column;
-		gap: 28px;
+		gap: 20px;
 	}
 
 	.session {
@@ -280,7 +307,7 @@
 		justify-content: space-between;
 		gap: 24px;
 		width: 100%;
-		padding: 36px 0 32px;
+		padding: 28px 0 24px;
 		background: none;
 		border: none;
 		cursor: pointer;
@@ -364,6 +391,8 @@
 		margin: 0 0 22px;
 		max-width: 500px;
 		line-height: 1.55;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.session__close-quote {
@@ -377,6 +406,17 @@
 		max-width: 500px;
 		line-height: 1.55;
 		opacity: 0.8;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.quote-signature {
+		height: 26px;
+		width: auto;
+		margin-top: 12px;
+		opacity: 0.8;
+		mix-blend-mode: multiply;
+		align-self: flex-start;
 	}
 
 	.session__desc {
