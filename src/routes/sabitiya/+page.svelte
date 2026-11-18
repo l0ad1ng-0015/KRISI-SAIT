@@ -386,10 +386,10 @@
 	}
 
 	.event__desc {
-		font-size: 0.9rem;
+		font-size: 1.02rem;
 		color: var(--text-muted);
-		line-height: 1.9;
-		max-width: 540px;
+		line-height: 1.85;
+		max-width: 560px;
 		margin-bottom: 12px;
 	}
 
@@ -505,9 +505,9 @@
 	}
 
 	.webinar__p {
-		font-size: 0.9rem;
+		font-size: 1.02rem;
 		color: var(--text-muted);
-		line-height: 1.9;
+		line-height: 1.85;
 		max-width: 600px;
 		margin-bottom: 10px;
 	}

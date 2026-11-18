@@ -60,7 +60,7 @@
 		jobTitle: 'Ментор',
 		url: 'https://kristinadoychinova.com',
 		telephone: '+359888900983',
-		email: 'kristina.doychinova7@gmail.com',
+		email: 'kristinadoychinova@innerself.bg',
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: 'София',
@@ -144,7 +144,7 @@
 				</p>
 				<div class="footer__contact">
 					<a href="tel:+359888900983">+359 888 900 983</a>
-					<a href="mailto:kristina.doychinova7@gmail.com">kristina.doychinova7@gmail.com</a>
+					<a href="mailto:kristinadoychinova@innerself.bg">kristinadoychinova@innerself.bg</a>
 				</div>
 			</div>
 

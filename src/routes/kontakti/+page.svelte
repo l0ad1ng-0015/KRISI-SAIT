@@ -131,9 +131,9 @@
 <!-- CONTACT INFO -->
 <section class="info">
 	<div class="info__inner container">
-		<a class="info__item" href="mailto:kristina.doychinova7@gmail.com">
+		<a class="info__item" href="mailto:kristinadoychinova@innerself.bg">
 			<span class="info__label">Имейл</span>
-			<span class="info__value">kristina.doychinova7@gmail.com</span>
+			<span class="info__value">kristinadoychinova@innerself.bg</span>
 		</a>
 		<a class="info__item" href="tel:+359888900983">
 			<span class="info__label">Телефон</span>

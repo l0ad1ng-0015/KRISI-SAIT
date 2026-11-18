@@ -483,7 +483,7 @@
 	}
 
 	.reviews-section__inner {
-		max-width: 1000px;
+		max-width: 1140px;
 	}
 
 	.reviews-section__header {
@@ -504,22 +504,22 @@
 	.reviews-track {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 24px;
+		gap: 28px;
 		align-items: stretch;
 	}
 
 	.review-card {
 		background: var(--card-bg);
 		border-radius: var(--radius);
-		padding: 32px 28px 34px;
+		padding: 42px 38px 44px;
 		display: flex;
 		flex-direction: column;
-		gap: 14px;
+		gap: 16px;
 	}
 
 	.review-card__mark {
 		font-family: var(--heading-font);
-		font-size: 2.6rem;
+		font-size: 3.4rem;
 		line-height: 0.6;
 		color: var(--secondary);
 		opacity: 0.25;
@@ -527,19 +527,19 @@
 
 	.review-card__text {
 		font-family: var(--heading-font);
-		font-size: 0.98rem;
+		font-size: 1.15rem;
 		font-style: italic;
 		color: var(--text);
-		line-height: 1.6;
+		line-height: 1.65;
 		flex: 1;
 		display: -webkit-box;
-		-webkit-line-clamp: 6;
+		-webkit-line-clamp: 7;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 	}
 
 	.review-card__name {
-		font-size: 0.72rem;
+		font-size: 0.8rem;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--text-muted);
